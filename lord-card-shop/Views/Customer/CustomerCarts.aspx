@@ -5,6 +5,9 @@
     <div class="container py-4">
         <h2 class="mb-4 text-center">Your Cart</h2>
 
+        <asp:Label ID="lblMessage" runat="server" ForeColor="Green" CssClass="mb-3" />
+
+
         <asp:GridView ID="CartsGridView" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered">
             <Columns>
                 <asp:BoundField DataField="CardName" HeaderText="Card Name" />
@@ -17,6 +20,7 @@
 
         <div class="mt-3 text-end">
             <asp:Button ID="CheckoutBtn" runat="server" Text="Checkout" CssClass="btn btn-success" OnClick="CheckoutBtn_Click" />
+            <asp:Button ID="ClearCartBtn" runat="server" Text="Clear Cart" CssClass="btn btn-danger ms-2" OnClick="ClearCartBtn_Click" />
         </div>
     </div>
 </asp:Content>

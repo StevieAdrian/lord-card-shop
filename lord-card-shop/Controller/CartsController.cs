@@ -19,5 +19,10 @@ namespace lord_card_shop.Controller
         {
             return CartsHandler.GetCartDisplayByUserId(userId);
         }
+
+        public static string ClearCarts(int userId)
+        {
+            return CartsHandler.ClearCart(userId);
+        }
     }
 }

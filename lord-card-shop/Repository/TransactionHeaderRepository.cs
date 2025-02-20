@@ -30,7 +30,7 @@ namespace lord_card_shop.Repository
                      .FirstOrDefault();
         }
 
-        public static DataTable GetTransactionById(int id)
+        public static DataTable GetTransactionByUserId(int id)
         {
             var query = from th in db.TransactionHeaders
                         where th.CustomerID == id
@@ -44,5 +44,22 @@ namespace lord_card_shop.Repository
 
             return DataTableHelper.ToDataTable(query.ToList());
         }
+
+        public static DataTable GetTransactionByTrId(int id)
+        {
+            var query = from th in db.TransactionHeaders
+                        where th.TransactionID == id
+                        select new
+                        {
+                            th.TransactionID,
+                            th.CustomerID,
+                            th.TransactionDate,
+                            th.Status,
+                            TotalPrice = th.TransactionDetails.Sum(td => (decimal?)(td.Quantity * td.Card.CardPrice)) ?? 0
+                        };
+
+            return DataTableHelper.ToDataTable(query.ToList());
+        }
+
     }
 }

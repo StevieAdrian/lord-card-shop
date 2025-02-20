@@ -1,4 +1,5 @@
 ﻿using lord_card_shop.Handler;
+using lord_card_shop.Model;
 using lord_card_shop.Repository;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,17 @@ namespace lord_card_shop.Controller
 
         public static DataTable FetchHistory(int userId)
         {
-            return TransactionHeaderRepository.GetTransactionById(userId);
+            return TransactionHeaderRepository.GetTransactionByUserId(userId);
+        }
+
+        public static DataTable FetchDetail(int transactionId)
+        {
+            return TransactionDetailRepository.GetTransactionDetailsByTransactionId(transactionId);
+        }
+
+        public static DataTable GetTransactionInfo(int transactionId)
+        {
+            return TransactionHeaderRepository.GetTransactionByTrId(transactionId);
         }
     }
 }

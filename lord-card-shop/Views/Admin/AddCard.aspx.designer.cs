@@ -15,6 +15,33 @@ namespace lord_card_shop.Views.Admin
     {
 
         /// <summary>
+        /// ErrorPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ErrorPanel;
+
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
+        /// NameLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NameLbl;
+
+        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -22,6 +49,15 @@ namespace lord_card_shop.Views.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtName;
+
+        /// <summary>
+        /// PriceLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PriceLbl;
 
         /// <summary>
         /// txtPrice control.
@@ -33,6 +69,15 @@ namespace lord_card_shop.Views.Admin
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
 
         /// <summary>
+        /// DescLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DescLbl;
+
+        /// <summary>
         /// txtDescription control.
         /// </summary>
         /// <remarks>
@@ -42,6 +87,15 @@ namespace lord_card_shop.Views.Admin
         protected global::System.Web.UI.WebControls.TextBox txtDescription;
 
         /// <summary>
+        /// TypeLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TypeLbl;
+
+        /// <summary>
         /// ddlType control.
         /// </summary>
         /// <remarks>
@@ -49,6 +103,15 @@ namespace lord_card_shop.Views.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlType;
+
+        /// <summary>
+        /// FoilLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FoilLbl;
 
         /// <summary>
         /// ddlFoil control.
@@ -67,14 +130,5 @@ namespace lord_card_shop.Views.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnInsert;
-
-        /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

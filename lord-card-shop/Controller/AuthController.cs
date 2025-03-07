@@ -28,10 +28,10 @@ namespace lord_card_shop.Controller
 
             if (rememberMe)
             {
-
+                CookieHelper.SetCookie(user.UserID);
             }
 
-            return "Login Succecss";
+            return "";
         }
     }
 }

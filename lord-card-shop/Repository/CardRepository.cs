@@ -21,5 +21,11 @@ namespace lord_card_shop.Repository
         {
             return db.Cards.ToList();
         }
+
+        public static Card GetCardById(int cardId)
+        {
+            return db.Cards.FirstOrDefault(c => c.CardID == cardId);
+        }
+
     }
 }

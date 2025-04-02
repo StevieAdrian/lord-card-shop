@@ -21,5 +21,10 @@ namespace lord_card_shop.Handler
                 throw;
             }
         }
+        public static Card GetCardById(int cardId)
+        {
+            return CardRepository.GetCardById(cardId);
+        }
+
     }
 }

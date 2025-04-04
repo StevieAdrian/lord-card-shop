@@ -22,9 +22,8 @@ namespace lord_card_shop.Views.Customer
 
         protected void LoadCart()
         {
-            int id = Convert.ToInt32(HttpContext.Current.Session["CurrentUserID"]);
-            // DataTable cartData = CartsController.FetchCart(id);
-            DataTable cartData = CartsController.FetchCart(1); // to be changed after session bug fixed
+            int id = Convert.ToInt32(HttpContext.Current.Session["userid"]);
+            DataTable cartData = CartsController.FetchCart(id);
 
             CartsGridView.DataSource = cartData;
             CartsGridView.DataBind();

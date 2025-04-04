@@ -58,8 +58,7 @@ namespace lord_card_shop.Views.Customer
             if (res != null)
             {
                 int cardId = Convert.ToInt32(res.Value);
-                // int userId = Convert.ToInt32(Session["UserId"]);
-                int userId = 1; // to be changed after session bug fixed
+                int userId = Convert.ToInt32(Session["userid"]);
                 int quantity = 1;
 
                 string result = CartsController.AddItemToCart(cardId, userId, quantity);

@@ -19,7 +19,6 @@
             <ItemTemplate>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100" style="width: 18rem;">
-                        <img class="card-img-top" src='<%# Eval("ImageUrl") %>' alt="Card image" />
                         <div class="card-body">
                             <asp:HiddenField ID="CardID" runat="server" Value='<%# Eval("CardID") %>' />
                             <h5 class="card-title"><%# Eval("CardName") %></h5>

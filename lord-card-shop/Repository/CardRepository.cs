@@ -9,7 +9,7 @@ namespace lord_card_shop.Repository
 {
     public class CardRepository
     {
-        public static LocalDatabaseEntities db = new LocalDatabaseEntities();
+        private static LocalDatabaseEntities db = new LocalDatabaseEntities();
         public static void AddCard(string cardName, decimal cardPrice, string cardDesc, string cardType, byte[] isFoil)
         {
             Card card = CardFactory.CreateNewCard(cardName, cardPrice, cardDesc, cardType, isFoil);

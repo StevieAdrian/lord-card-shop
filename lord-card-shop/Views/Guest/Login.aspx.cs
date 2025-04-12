@@ -45,7 +45,7 @@ namespace lord_card_shop.Views.Guest
             if (user.UserPassword == password)
             {
                 Session["Username"] = username;
-
+                      
                 if (RememberCheck.Checked)
                 {
                     HttpCookie cookie = new HttpCookie("LoginCookie");

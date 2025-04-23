@@ -27,5 +27,28 @@ namespace lord_card_shop.Repository
             return db.Cards.FirstOrDefault(c => c.CardID == cardId);
         }
 
+        public static void DeleteCard(int id)
+        {
+            Card card = db.Cards.FirstOrDefault(c => c.CardID == id);
+            if (card != null)
+            {
+                db.Cards.Remove(card);
+                db.SaveChanges();
+            }
+        }
+
+        public static void UpdateCard(int id, string name, decimal price, string desc, string type, byte[] foil)
+        {
+            Card card = db.Cards.FirstOrDefault(c => c.CardID == id);
+            if (card != null)
+            {
+                card.CardName = name;
+                card.CardPrice = price;
+                card.CardDesc = desc;
+                card.CardType = type;
+                card.isFoil = foil;
+                db.SaveChanges();
+            }
+        }
     }
 }

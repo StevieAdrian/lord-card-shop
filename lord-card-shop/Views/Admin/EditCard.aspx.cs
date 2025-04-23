@@ -1,49 +1,46 @@
 ﻿using lord_card_shop.Controller;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace lord_card_shop.Views.Admin
 {
-    public partial class AddCard : System.Web.UI.Page
+    public partial class EditCard : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["role"] == null || Session["role"].ToString() != "admin")
-            //{
-            //    Response.Redirect("~/Users/Home.aspx");
-            //}
             if (!IsPostBack)
             {
-                ErrorPanel.Visible = false;
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                var card = CardController.GetCardDetailById(id);
+
+                if (card != null)
+                {
+                    hfCardID.Value = card.CardID.ToString();
+                    txtName.Text = card.CardName;
+                    txtPrice.Text = card.CardPrice.ToString();
+                    txtDescription.Text = card.CardDesc;
+                    ddlType.SelectedValue = card.CardType;
+                    ddlFoil.SelectedValue = (card.isFoil[0] == 1) ? "yes" : "no";
+                }
             }
         }
 
-        protected void btnInsert_Click(object sender, EventArgs e)
+        protected void btnUpdate_Click(object sender, EventArgs e)
         {
+            int id = int.Parse(hfCardID.Value);
             string name = txtName.Text.Trim();
             string priceText = txtPrice.Text.Trim();
             string desc = txtDescription.Text.Trim();
             string type = ddlType.SelectedValue;
             string foil = ddlFoil.SelectedValue;
-            byte[] foilBytes = null;
 
-            Debug.WriteLine("debug 1");
+            byte[] foilBytes = foil == "yes" ? new byte[] { 1 } : new byte[] { 0 };
 
-            if (foil.ToLower() == "yes") foilBytes = new byte[] { 1 };
-            else if (foil.ToLower() == "no") foilBytes = new byte[] { 0 };
-            //else
-            //{
-            //   Debug.WriteLine("debug 2");
-            //}
-
-            string result = CardController.AddCard(name, priceText, desc, type, foilBytes);
+            string result = CardController.UpdateCard(id, name, priceText, desc, type, foilBytes);
             if (result != null)
             {
                 lblError.Text = result;
@@ -58,6 +55,5 @@ namespace lord_card_shop.Views.Admin
         {
             Response.Redirect("~/Views/Admin/ManageCard.aspx");
         }
-
     }
 }

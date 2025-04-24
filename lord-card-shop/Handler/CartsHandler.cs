@@ -24,7 +24,7 @@ namespace lord_card_shop.Handler
                 }
                 else
                 {
-                    CartsRepository.AddCart(cardId, userId, 1);
+                    CartsRepository.AddCart(cardId, userId, quantity);
                 }
                 return "Item added successfully.";
             }

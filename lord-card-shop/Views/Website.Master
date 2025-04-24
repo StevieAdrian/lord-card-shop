@@ -56,7 +56,7 @@
                                 <asp:LinkButton class="nav-link" ID="navReportBtn" runat="server" Visible="False">Transaction Report</asp:LinkButton>
                             </li>
                             <li class="nav-item">
-                                <asp:LinkButton class="nav-link" ID="navQueueBtn" runat="server" Visible="False">Order Queue</asp:LinkButton>
+                                <asp:LinkButton class="nav-link" ID="navQueueBtn" runat="server" href="/Views/Admin/OrderQueue.aspx" Visible="False">Order Queue</asp:LinkButton>
                             </li>
 
                             <!-- Searchbar: Only accessible for logged in user -->

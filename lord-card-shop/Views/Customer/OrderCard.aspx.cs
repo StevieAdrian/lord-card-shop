@@ -51,15 +51,16 @@ namespace lord_card_shop.Views.Customer
             ListViewItem item = (ListViewItem)btn.NamingContainer;
 
             HiddenField res = (HiddenField)item.FindControl("CardID");
-           /* int tes = Convert.ToInt32(hfCardId.Value);
-            System.Diagnostics.Debug.WriteLine("debug 1: " + tes);
-            */
+            TextBox quantityBox = (TextBox)item.FindControl("QuantityBox");
+            /* int tes = Convert.ToInt32(hfCardId.Value);
+             System.Diagnostics.Debug.WriteLine("debug 1: " + tes);
+             */
 
             if (res != null)
             {
                 int cardId = Convert.ToInt32(res.Value);
                 int userId = Convert.ToInt32(Session["userid"]);
-                int quantity = 1;
+                int quantity = int.TryParse(quantityBox.Text, out int qty) ? qty : 1;
 
                 string result = CartsController.AddItemToCart(cardId, userId, quantity);
 
@@ -81,16 +82,33 @@ namespace lord_card_shop.Views.Customer
 
         protected void DownBtn_Click(object sender, EventArgs e)
         {
-            //alur: passing card id to card details, and then go to card detail page
+            Button btn = (Button)sender;
+            ListViewItem item = (ListViewItem)btn.NamingContainer;
 
-            //Response.Redirect("~/Views/Customer/CardDetails.aspx");
+            TextBox quantityBox = (TextBox)item.FindControl("QuantityBox");
+
+            if (quantityBox != null && int.TryParse(quantityBox.Text, out int quantity))
+            {
+                if (quantity > 1)
+                {
+                    quantity--;
+                    quantityBox.Text = quantity.ToString();
+                }
+            }
         }
 
         protected void UpBtn_Click(object sender, EventArgs e)
         {
-            //alur: passing card id to card details, and then go to card detail page
+            Button btn = (Button)sender;
+            ListViewItem item = (ListViewItem)btn.NamingContainer;
 
-            //Response.Redirect("~/Views/Customer/CardDetails.aspx");
+            TextBox quantityBox = (TextBox)item.FindControl("QuantityBox");
+
+            if (quantityBox != null && int.TryParse(quantityBox.Text, out int quantity))
+            {
+                quantity++;
+                quantityBox.Text = quantity.ToString();
+            }
         }
 
     }

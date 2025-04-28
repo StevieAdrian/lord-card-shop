@@ -3,6 +3,7 @@ using System.Data;
 using System.Web;
 using System.Web.Util;
 using lord_card_shop.Controller;
+using lord_card_shop.Helper;
 using lord_card_shop.Model;
 
 namespace lord_card_shop.Views.Customer
@@ -11,6 +12,11 @@ namespace lord_card_shop.Views.Customer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!MiddlewareHelper.CheckLogin() || !MiddlewareHelper.CheckCustomer())
+            {
+                return;
+            }
+
             if (!IsPostBack)
             {
                 int transactionId = GetTransactionIdFromQuery();

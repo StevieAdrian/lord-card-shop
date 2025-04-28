@@ -5,14 +5,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using lord_card_shop.Controller;
+using lord_card_shop.Helper;
 
 namespace lord_card_shop.Views.Customer
 {
     public partial class OrderCard : System.Web.UI.Page
     {
         OrderCardController Controller = new OrderCardController();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!MiddlewareHelper.CheckLogin() || !MiddlewareHelper.CheckCustomer())
+            {
+                return;
+            }
+
             if (!IsPostBack)
             {
                 CardListView.DataSource = Controller.ViewCardList();

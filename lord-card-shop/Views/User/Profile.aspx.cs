@@ -11,6 +11,11 @@ namespace lord_card_shop.Views.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!MiddlewareHelper.CheckLogin())
+            {
+                return;
+            }
+
             if (!IsPostBack)
             {
                 var user = SessionHelper.GetCurrentUser();

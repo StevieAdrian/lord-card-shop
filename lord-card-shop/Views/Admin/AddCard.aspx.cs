@@ -1,4 +1,5 @@
 ﻿using lord_card_shop.Controller;
+using lord_card_shop.Helper;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -15,10 +16,11 @@ namespace lord_card_shop.Views.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["role"] == null || Session["role"].ToString() != "admin")
-            //{
-            //    Response.Redirect("~/Users/Home.aspx");
-            //}
+            if (!MiddlewareHelper.CheckLogin() || !MiddlewareHelper.CheckAdmin())
+            {
+                return;
+            }
+
             if (!IsPostBack)
             {
                 ErrorPanel.Visible = false;

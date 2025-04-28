@@ -1,4 +1,5 @@
 ﻿using lord_card_shop.Controller;
+using lord_card_shop.Helper;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,6 +14,11 @@ namespace lord_card_shop.Views.Customer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!MiddlewareHelper.CheckLogin() || !MiddlewareHelper.CheckCustomer())
+            {
+                return;
+            }
+
             if (!IsPostBack)
             {
                 LoadTransaction();

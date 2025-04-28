@@ -9,7 +9,7 @@ namespace lord_card_shop.Helper
     public class CookieHelper
     {
         private const string CookieName = "LoginCookie";
-        private const string UserIdKey = "UserID";
+        private const string UserIdKey = "userid";
         private const int CookieExpirationDays = 7;
         public static void SetCookie(int userId)
         {

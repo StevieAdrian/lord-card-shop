@@ -21,6 +21,21 @@ namespace lord_card_shop.Repository
             return th.TransactionID;
         }
 
+        public static DataTable GetAllTransactions()
+        {
+            var query = from th in db.TransactionHeaders
+                        select new
+                        {
+                            th.TransactionID,
+                            th.CustomerID,
+                            th.TransactionDate,
+                            th.Status,
+                            TotalPrice = th.TransactionDetails.Sum(td => (decimal?)(td.Quantity * td.Card.CardPrice)) ?? 0
+                        };
+
+            return DataTableHelper.ToDataTable(query.ToList());
+        }
+
         public static int GetTransaction(int userId, DateTime date)
         {
             return db.TransactionHeaders
@@ -61,5 +76,30 @@ namespace lord_card_shop.Repository
             return DataTableHelper.ToDataTable(query.ToList());
         }
 
+        public static DataTable GetStatus()
+        {
+            var query = from th in db.TransactionHeaders
+                        where th.Status == "Unhandled" || th.Status == "Handled"
+                        select new
+                        {
+                            th.TransactionID,
+                            th.CustomerID,
+                            th.TransactionDate,
+                            th.Status,
+                            TotalPrice = th.TransactionDetails.Sum(td => (decimal?)(td.Quantity * td.Card.CardPrice)) ?? 0
+                        };
+
+            return DataTableHelper.ToDataTable(query.ToList());
+        }
+
+        public static void UpdateTransaction(int transactionId, string newStatus)
+        {
+            var transaction = db.TransactionHeaders.FirstOrDefault(th => th.TransactionID == transactionId);
+            if (transaction != null)
+            {
+                transaction.Status = newStatus;
+                db.SaveChanges();
+            }
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace lord_card_shop.Model
     
         public int CardID { get; set; }
         public string CardName { get; set; }
-        public float CardPrice { get; set; }
+        public decimal CardPrice { get; set; }
         public string CardDesc { get; set; }
         public string CardType { get; set; }
         public byte[] isFoil { get; set; }

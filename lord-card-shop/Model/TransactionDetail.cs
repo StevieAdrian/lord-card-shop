@@ -19,5 +19,6 @@ namespace lord_card_shop.Model
         public int Quantity { get; set; }
     
         public virtual Card Card { get; set; }
+        public virtual TransactionHeader TransactionHeader { get; set; }
     }
 }

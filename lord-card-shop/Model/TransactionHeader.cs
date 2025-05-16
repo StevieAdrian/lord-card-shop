@@ -19,6 +19,7 @@ namespace lord_card_shop.Model
         public int CustomerID { get; set; }
         public string Status { get; set; }
     
+        public virtual TransactionDetail TransactionDetail { get; set; }
         public virtual User User { get; set; }
     }
 }

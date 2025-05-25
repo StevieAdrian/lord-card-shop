@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,19 +75,172 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\LocalDatabase.mdf" />
+    <Content Include="App_Data\LocalDatabase_log.ldf">
+      <DependentUpon>LocalDatabase.mdf</DependentUpon>
+    </Content>
+    <Content Include="Attributes\images\collection_1.jpg" />
+    <Content Include="Attributes\images\collection_2.jpg" />
+    <Content Include="Attributes\images\logo.png" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.min.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-reboot.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-utilities.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-utilities.min.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap.rtl.css" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap.rtl.min.css" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.bundle.js" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.esm.js" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.esm.min.js" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.min.js" />
+    <Content Include="Model\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guest\Login.aspx" />
+    <Content Include="Views\Guest\Register.aspx" />
+    <Content Include="Views\User\Home.aspx" />
+    <Content Include="Views\User\Profile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\CardFactory.cs" />
+    <Compile Include="Factory\CartsFactory.cs" />
+    <Compile Include="Factory\TransactionDetailFactory.cs" />
+    <Compile Include="Factory\TransactionHeaderFactory.cs" />
+    <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Model\Card.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cart.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TransactionDetail.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TransactionHeader.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CardRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Views\Guest\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Guest\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guest\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Guest\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Website.Master.cs">
+      <DependentUpon>Website.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Website.Master.designer.cs">
+      <DependentUpon>Website.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Model\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="bootstrap-5.3.6-dist\.DS_Store" />
+    <Content Include="bootstrap-5.3.6-dist\css\.DS_Store" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-utilities.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-utilities.min.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap.rtl.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.esm.js.map" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.esm.min.js.map" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.js.map" />
+    <Content Include="bootstrap-5.3.6-dist\js\bootstrap.min.js.map" />
     <None Include="packages.config" />
+    <Content Include="Views\Website.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attribute\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

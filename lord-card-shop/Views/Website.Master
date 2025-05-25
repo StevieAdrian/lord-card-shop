@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Website.master.cs" Inherits="lord_card_shop.Views.Website" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="<%= ResolveUrl("~/bootstrap-5.3.6-dist/css/bootstrap.min.css") %>" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper d-flex flex-column min-vh-100">
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-light px-3">
+                    <a class="navbar-brand d-flex align-items-center fw-bold d-flex align-items-center me-3" href="#">
+                        <asp:Image ID="logo" runat="server" ImageUrl="~/Attributes/images/logo.png" Width="25" Height="25" />
+                        LORD CARD SHOP
+                    </a>
+                    <button class="navbar-toggler ms-auto" type="button"
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav me-auto">
+                            <!-- Only accessible for logged in user -->
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navHomeBtn" runat="server" Visible="False">Home</asp:LinkButton>
+                            </li>
+
+                            <!-- Only accessible for customer -->
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navOrderBtn" runat="server" Visible="false">Order Card</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navCartBtn" runat="server" Visible="False">Cart</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navHistoryBtn" runat="server" Visible="False">History</asp:LinkButton>
+                            </li>
+
+                            <!-- Only accessible for admin -->
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navManageBtn" runat="server" Visible="False">Manage Card</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navViewBtn" runat="server" Visible="False">View Transaction</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navReportBtn" runat="server" Visible="False">Transaction Report</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navQueueBtn" runat="server" Visible="False">Order Queue</asp:LinkButton>
+                            </li>
+
+                            <!-- Searchbar: Only accessible for logged in user -->
+                            <li class="nav-item d-flex align-items-center">
+                                <asp:TextBox CssClass="form-control me-1 border-primary" ID="navSearchBar" runat="server" OnTextChanged="navSearchBar_TextChanged" Visible="False"></asp:TextBox>
+                                <asp:Button CssClass="btn btn-primary py-1" ID="navSearchBtn" runat="server" Text="Search" Visible="False" />
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto align-items-center">
+                            <!-- Only accessible for logged in user -->
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navLogoutBtn" runat="server" Visible="true">Logout</asp:LinkButton>
+                            </li>
+
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" ID="navProfileBtn" OnClick="navProfileBtn_Click" runat="server" Visible="true">Profile</asp:LinkButton>
+                            </li>
+
+                            <!-- Changeable depends on the role -->
+                            <li class="d-flex align-items-center ms-auto">
+                                <asp:Label ID="navUsernameLbl" runat="server" CssClass="mb-0" Text="Hello, Guest!" />
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <main class="flex-grow-1">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </main>
+
+            <div>
+                <footer class="bg-dark-subtle text-center py-3 mt-auto">
+                    &copy All right reserved.
+                    <br />
+                    Lord Card Shop
+                </footer>
+            </div>
+        </div>
+    </form>
+    <script src="<%= ResolveUrl("~/bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js") %>"></script>
+</body>
+</html>

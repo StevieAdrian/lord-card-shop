@@ -126,6 +126,8 @@
     <Compile Include="Factory\TransactionDetailFactory.cs" />
     <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Handler\RegisterHandler.cs" />
+    <Compile Include="Helper\RegisterValidateHelper.cs" />
     <Compile Include="Model\Card.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

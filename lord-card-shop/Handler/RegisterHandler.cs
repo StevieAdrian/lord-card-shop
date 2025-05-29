@@ -9,7 +9,7 @@ using System.Web;
 namespace lord_card_shop.Handler
 {
     public class RegisterHandler
-    {
+    {   
         private static LocalDatabaseEntities db = new LocalDatabaseEntities();
 
         public static bool RegisterUser(string username, string email, string dob, string password, string confirmPassword, bool maleChecked, bool femaleChecked, out string errorMessage)

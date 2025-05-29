@@ -131,7 +131,9 @@
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\CardsHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
+    <Compile Include="Helper\CardValidateHelper.cs" />
     <Compile Include="Helper\RegisterValidateHelper.cs" />
+    <Compile Include="Helper\SessionHelper.cs" />
     <Compile Include="Model\Card.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

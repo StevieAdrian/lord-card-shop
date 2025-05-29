@@ -28,6 +28,7 @@ namespace lord_card_shop.Views.Guest
             bool success = RegisterHandler.RegisterUser(
                txtUsername.Text.Trim(),
                txtEmail.Text.Trim(),
+               txtDOB.Text.Trim(),
                txtPassword.Text,
                txtConfirmPassword.Text,
                rbMale.Checked,
@@ -38,6 +39,7 @@ namespace lord_card_shop.Views.Guest
             if (!success)
             {
                 ErrorLbl.Text = errorMessage;
+                ErrorPanel.Visible = !string.IsNullOrEmpty(ErrorLbl.Text);
             }
             else
             {

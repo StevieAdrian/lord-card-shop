@@ -84,6 +84,8 @@
                 </nav>
             </div>
 
+            <asp:ContentPlaceHolder ID="NotificationPlaceholder" runat="server" />
+
             <main class="flex-grow-1">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
             </main>

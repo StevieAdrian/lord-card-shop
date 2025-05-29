@@ -9,35 +9,41 @@
                 <h2 class="card-title">Register</h2>
                 <hr />
                 
+                <asp:Panel ID="ErrorPanel" runat="server" Visible="false">
+                    <div class="alert alert-danger">
+                        <asp:Label ID="ErrorLbl" runat="server" ForeColor="Red"></asp:Label>
+                    </div>
+                </asp:Panel>
+
                 <div class="mb-3">
                     <asp:Label Text="Username:" runat="server" />
                     <asp:TextBox CssClass="form-control form-control-md" ID="txtUsername" placeholder="Enter username" runat="server" />
-                    <asp:Label ID="UsernameErrorLbl" runat="server" ForeColor="Red"></asp:Label>
                 </div>
 
                 <div class="mb-3">
                     <asp:Label Text="Email:" runat="server" />
                     <asp:TextBox CssClass="form-control form-control-md" ID="txtEmail" placeholder="user@example.com" runat="server" />
-                    <asp:Label ID="EmailErrorLbl" runat="server" ForeColor="Red"></asp:Label>
+                </div>
+
+                <div class="mb-3">
+                    <asp:Label Text="Date of Birth:" runat="server" />
+                    <asp:TextBox CssClass="form-control form-control-md" ID="txtDOB" placeholder="DD/MM/YYYY" runat="server" TextMode="Date"></asp:TextBox>
                 </div>
 
                 <div class="mb-3">
                     <asp:Label Text="Password:" runat="server" />
                     <asp:TextBox CssClass="form-control form-control-md" ID="txtPassword" placeholder="Enter password" runat="server" TextMode="Password" />
-                    <asp:Label ID="PasswordErrorLbl" runat="server" ForeColor="Red"></asp:Label>
                 </div>
 
                 <div class="mb-3">
                     <asp:Label Text="Confirm Password:" runat="server" />
                     <asp:TextBox CssClass="form-control form-control-md" ID="txtConfirmPassword" placeholder="Enter confirm password" runat="server" TextMode="Password" />
-                    <asp:Label ID="ConfirmErrorLbl" runat="server" ForeColor="Red"></asp:Label>
                 </div>
 
                 <div class="mb-3">
                     <asp:Label Text="Gender:" runat="server" /> <br />
                     <asp:RadioButton CssClass="me-3" ID="rbMale" runat="server" GroupName="Gender" Text="Male" />
                     <asp:RadioButton ID="rbFemale" runat="server" GroupName="Gender" Text="Female" />
-                    <asp:Label ID="GenderErrorLbl" runat="server" ForeColor="Red"></asp:Label>
                 </div>
                 
                 <div class="mb-3">
@@ -45,7 +51,6 @@
                 </div>
 
                 <div class="mb-3">
-                    <asp:Label ID="ErrorLbl" runat="server" ForeColor="Red"></asp:Label>
                     <asp:Button class="btn btn-primary" ID="RegisterBtn" runat="server" Text="Register" OnClick="RegisterBtn_Click" />
                 </div>
 

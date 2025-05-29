@@ -15,6 +15,24 @@ namespace lord_card_shop.Views.Guest
     {
 
         /// <summary>
+        /// ErrorPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ErrorPanel;
+
+        /// <summary>
+        /// ErrorLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorLbl;
+
+        /// <summary>
         /// UsernameLbl control.
         /// </summary>
         /// <remarks>
@@ -58,15 +76,6 @@ namespace lord_card_shop.Views.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox RememberCheck;
-
-        /// <summary>
-        /// ErrorLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorLbl;
 
         /// <summary>
         /// LoginBtn control.

@@ -31,18 +31,11 @@ namespace lord_card_shop.Views.Guest
             string username = UsernameInput.Text.Trim();
             string password = PasswordInput.Text.Trim();
 
-            // Cek ke database Users
+            // Validasi username: Cek ke database Users
             var user = db.Users.FirstOrDefault(u => u.UserName == username);
 
-            if (user == null)
-            {
-                // Jika user belum terdaftar, redirect ke Register
-                Response.Redirect("Register.aspx");
-                return;
-            }
-
             // Validasi password
-            if (user.UserPassword == password)
+            if (user.UserPassword == password || user != null)
             {
                 Session["Username"] = username;
                       
@@ -59,6 +52,7 @@ namespace lord_card_shop.Views.Guest
             else
             {
                 ErrorLbl.Text = "Invalid username or password.";
+                ErrorPanel.Visible = !string.IsNullOrEmpty(ErrorLbl.Text);
             }
         }
 

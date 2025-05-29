@@ -10,7 +10,7 @@ namespace lord_card_shop.Views.Customer
 {
     public partial class OrderCard : System.Web.UI.Page
     {
-        OrderCardController Controller = new OrderCardController();
+        // OrderCardController Controller = new OrderCardController();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

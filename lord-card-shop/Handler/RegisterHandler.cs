@@ -12,15 +12,17 @@ namespace lord_card_shop.Handler
     {
         private static LocalDatabaseEntities db = new LocalDatabaseEntities();
 
-        public static bool RegisterUser(string username, string email, string password, string confirmPassword, bool maleChecked, bool femaleChecked, out string errorMessage)
+        public static bool RegisterUser(string username, string email, string dob, string password, string confirmPassword, bool maleChecked, bool femaleChecked, out string errorMessage)
         {
-            errorMessage = RegisterValidateHelper.ValidateUsername(username) ?? RegisterValidateHelper.ValidateEmail(email) ?? RegisterValidateHelper.ValidatePassword(password) ?? RegisterValidateHelper.ValidateConfirmPassword(password, confirmPassword) ?? RegisterValidateHelper.ValidateGender(maleChecked, femaleChecked);
+            errorMessage = RegisterValidateHelper.ValidateUsername(username) ?? RegisterValidateHelper.ValidateEmail(email) ?? RegisterValidateHelper.ValidateDOB(dob) ?? RegisterValidateHelper.ValidatePassword(password) ?? RegisterValidateHelper.ValidateConfirmPassword(password, confirmPassword) ?? RegisterValidateHelper.ValidateGender(maleChecked, femaleChecked);
 
             if (errorMessage != null) return false;
 
+            DateTime dobParsed = DateTime.Parse(dob);
+
             try
             {
-                UserRepository.AddUser(username, email, password, maleChecked ? "Male" : "Female", DateTime.MinValue, "Customer");
+                UserRepository.AddUser(username, email, password, maleChecked ? "Male" : "Female", dobParsed, "Customer");
 
                 return true;
             }

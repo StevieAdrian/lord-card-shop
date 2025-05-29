@@ -22,6 +22,12 @@
                 </div>
 
                 <div class="mb-3">
+                    <asp:Label Text="Date of Birth:" runat="server" />
+                    <asp:TextBox CssClass="form-control form-control-md" ID="txtDOB" placeholder="DD/MM/YYYY" runat="server" TextMode="Date"></asp:TextBox>
+                    <asp:Label ID="DOBLbl" runat="server" ForeColor="Red"></asp:Label>
+                </div>
+
+                <div class="mb-3">
                     <asp:Label Text="Password:" runat="server" />
                     <asp:TextBox CssClass="form-control form-control-md" ID="txtPassword" placeholder="Enter password" runat="server" TextMode="Password" />
                     <asp:Label ID="PasswordErrorLbl" runat="server" ForeColor="Red"></asp:Label>

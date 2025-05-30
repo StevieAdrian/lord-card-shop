@@ -123,6 +123,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AuthController.cs" />
     <Compile Include="Controller\CardController.cs" />
     <Compile Include="Controller\CartsController.cs" />
     <Compile Include="Controller\OrderCardController.cs" />
@@ -134,8 +135,10 @@
     <Compile Include="Handler\CardHandler.cs" />
     <Compile Include="Handler\CardsHandler.cs" />
     <Compile Include="Handler\CartsHandler.cs" />
+    <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
     <Compile Include="Helper\CardValidateHelper.cs" />
+    <Compile Include="Helper\CookieHelper.cs" />
     <Compile Include="Helper\RegisterValidateHelper.cs" />
     <Compile Include="Helper\SessionHelper.cs" />
     <Compile Include="Model\Card.cs">

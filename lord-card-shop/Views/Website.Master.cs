@@ -41,7 +41,7 @@ namespace lord_card_shop.Views
             //else if (currentPage == "orderqueue.aspx")
             //    navQueueBtn.CssClass += " active";
             else if (currentPage == "profile.aspx")
-                navProfileBtn.CssClass += " active";
+                navProfileBtn.CssClass = "p-2 active";
         }
 
         protected void navSearchBar_TextChanged(object sender, EventArgs e)

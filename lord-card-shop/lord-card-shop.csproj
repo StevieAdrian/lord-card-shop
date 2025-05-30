@@ -82,6 +82,7 @@
     <Content Include="Attributes\images\collection_1.jpg" />
     <Content Include="Attributes\images\collection_2.jpg" />
     <Content Include="Attributes\images\logo.png" />
+    <Content Include="Attributes\images\spell_1.jpg" />
     <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.css" />
     <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap-5.3.6-dist\css\bootstrap-grid.rtl.css" />
@@ -115,6 +116,7 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Admin\AddCard.aspx" />
+    <Content Include="Views\Customer\OrderCard.aspx" />
     <Content Include="Views\Guest\Login.aspx" />
     <Content Include="Views\Guest\Register.aspx" />
     <Content Include="Views\User\Home.aspx" />
@@ -122,13 +124,24 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="Controller\CardController.cs" />
+    <Compile Include="Controller\CartsController.cs" />
+    <Compile Include="Controller\OrderCardController.cs" />
     <Compile Include="Factory\CardFactory.cs" />
     <Compile Include="Factory\CartsFactory.cs" />
     <Compile Include="Factory\TransactionDetailFactory.cs" />
     <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Handler\CardHandler.cs" />
+    <Compile Include="Handler\CardsHandler.cs" />
+    <Compile Include="Handler\CartsHandler.cs" />
+    <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
+    <Compile Include="Helper\CardValidateHelper.cs" />
+    <Compile Include="Helper\CookieHelper.cs" />
     <Compile Include="Helper\RegisterValidateHelper.cs" />
+    <Compile Include="Helper\SessionHelper.cs" />
     <Compile Include="Model\Card.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -171,6 +184,12 @@
     </Compile>
     <Compile Include="Views\Admin\AddCard.aspx.designer.cs">
       <DependentUpon>AddCard.aspx</DependentUpon>
+    <Compile Include="Views\Customer\OrderCard.aspx.cs">
+      <DependentUpon>OrderCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\OrderCard.aspx.designer.cs">
+      <DependentUpon>OrderCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Guest\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

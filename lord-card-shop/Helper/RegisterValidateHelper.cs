@@ -22,6 +22,15 @@ namespace lord_card_shop.Helper
             return null;
         }
 
+        public static string ValidateDOB(string dob)
+        {
+            DateTime dobt;
+            if (string.IsNullOrWhiteSpace(dob)) return "Date of birth is required.";
+            if (!DateTime.TryParse(dob, out dobt)) return "Please enter a valid date of birth.";
+            if (dobt > DateTime.Now) return "Please enter a valid date of birth.";
+            return null;
+        }
+
         public static string ValidatePassword(string password)
         {
             if (string.IsNullOrWhiteSpace(password)) return "Password is required.";

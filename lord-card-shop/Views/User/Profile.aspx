@@ -6,7 +6,7 @@
     <div class="container py-lg-3">
         <div class="card my-5">
             <div class="card-body">
-                <h2 class="card-title text-center">My Profile</span></h2>
+                <h2 class="card-title text-center">My Profile</h2>
                 <hr />
             
                 <div class="mb-3">

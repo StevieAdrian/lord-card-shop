@@ -9,6 +9,12 @@
                 <h2 class="card-title">Login</h2>
                 <hr />
                 
+                <asp:Panel ID="ErrorPanel" runat="server" Visible="false">
+                    <div class="alert alert-danger">
+                        <asp:Label ID="ErrorLbl" runat="server" ForeColor="Red"></asp:Label>
+                    </div>
+                </asp:Panel>
+
                 <div class="mb-3">
                     <asp:Label ID="UsernameLbl" runat="server" Text="Username:" />
                     <asp:TextBox CssClass="form-control form-control-md" ID="UsernameInput" placeholder="Enter username" runat="server" />
@@ -24,7 +30,6 @@
                 </div>
 
                 <div class="mb-3">
-                    <asp:Label ID="ErrorLbl" runat="server" ForeColor="Red" />
                     <asp:Button class="btn btn-primary" ID="LoginBtn" runat="server" Text="Login" OnClick="LoginBtn_Click" />
                 </div>
 

@@ -15,6 +15,24 @@ namespace lord_card_shop.Views.Guest
     {
 
         /// <summary>
+        /// ErrorPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ErrorPanel;
+
+        /// <summary>
+        /// ErrorLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorLbl;
+
+        /// <summary>
         /// txtUsername control.
         /// </summary>
         /// <remarks>
@@ -22,15 +40,6 @@ namespace lord_card_shop.Views.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsername;
-
-        /// <summary>
-        /// UsernameErrorLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label UsernameErrorLbl;
 
         /// <summary>
         /// txtEmail control.
@@ -42,13 +51,13 @@ namespace lord_card_shop.Views.Guest
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// EmailErrorLbl control.
+        /// txtDOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmailErrorLbl;
+        protected global::System.Web.UI.WebControls.TextBox txtDOB;
 
         /// <summary>
         /// txtPassword control.
@@ -60,15 +69,6 @@ namespace lord_card_shop.Views.Guest
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
-        /// PasswordErrorLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PasswordErrorLbl;
-
-        /// <summary>
         /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
@@ -76,15 +76,6 @@ namespace lord_card_shop.Views.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
-
-        /// <summary>
-        /// ConfirmErrorLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ConfirmErrorLbl;
 
         /// <summary>
         /// rbMale control.
@@ -105,15 +96,6 @@ namespace lord_card_shop.Views.Guest
         protected global::System.Web.UI.WebControls.RadioButton rbFemale;
 
         /// <summary>
-        /// GenderErrorLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label GenderErrorLbl;
-
-        /// <summary>
         /// hfRole control.
         /// </summary>
         /// <remarks>
@@ -121,15 +103,6 @@ namespace lord_card_shop.Views.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hfRole;
-
-        /// <summary>
-        /// ErrorLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorLbl;
 
         /// <summary>
         /// RegisterBtn control.

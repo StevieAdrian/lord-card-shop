@@ -22,5 +22,22 @@ namespace lord_card_shop.Repository
         {
             return db.Carts.ToList();
         }
+
+        public static List<Cart> GetCartsById(int id)
+        {
+            return db.Carts.Where(c => c.UserID == id).ToList();
+        }
+
+        public static bool UpdateCart(Cart newCart)
+        {
+            var cart = db.Carts.Find(newCart.CartID);
+            if (cart != null)
+            {
+                cart.Quantity = newCart.Quantity;
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -21,5 +21,11 @@ namespace lord_card_shop.Repository
         {
             return db.Users.ToList();
         }
+
+        public static User GetUser(string username, string password)
+        {
+            return db.Users.FirstOrDefault(u => u.UserName == username && u.UserPassword == password);
+        }
+
     }
 }

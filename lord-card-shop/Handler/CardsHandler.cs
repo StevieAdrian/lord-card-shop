@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace lord_card_shop.Handler
         private CardRepository Repository = new CardRepository();
         public List<Card> GetCards()
         {
-            return Repository.GetAllCards();
+            return CardRepository.GetAllCards();
         }
     }
-}*/
+}

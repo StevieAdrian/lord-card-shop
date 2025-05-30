@@ -1,4 +1,6 @@
-﻿using lord_card_shop.Model;
+﻿using lord_card_shop.Controller;
+using lord_card_shop.Helper;
+using lord_card_shop.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +12,12 @@ namespace lord_card_shop.Views.Guest
 {
     public partial class Login : System.Web.UI.Page
     {
-        private LocalDatabaseEntities db = new LocalDatabaseEntities();
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!IsPostBack)
             {
-                if (Request.Cookies["LoginCookie"] != null)
-                {
-                    string username = Request.Cookies["LoginCookie"]["Username"];
-                    Session["Username"] = username;
-                    Response.Redirect("Home.aspx");
-                }
+                // tar tambah middleware
             }
 
         }
@@ -30,35 +25,47 @@ namespace lord_card_shop.Views.Guest
         {
             string username = UsernameInput.Text.Trim();
             string password = PasswordInput.Text.Trim();
+            bool remember = RememberCheck.Checked;
 
-            // Validasi username: Cek ke database Users
-            var user = db.Users.FirstOrDefault(u => u.UserName == username);
+            string res = AuthController.AuthenticateUser(username, password, remember);
 
-            // Validasi password
-            if (user.UserPassword == password || user != null)
+            if (!string.IsNullOrEmpty(res))
             {
-                Session["Username"] = username;
-                      
-                if (RememberCheck.Checked)
-                {
-                    HttpCookie cookie = new HttpCookie("LoginCookie");
-                    cookie["Username"] = username;
-                    cookie.Expires = DateTime.Now.AddDays(3);
-                    Response.Cookies.Add(cookie);
-                }
+                ShowError(res);
+                return;
+            }
 
-                Response.Redirect("Home.aspx");
-            }
-            else
-            {
-                ErrorLbl.Text = "Invalid username or password.";
-                ErrorPanel.Visible = !string.IsNullOrEmpty(ErrorLbl.Text);
-            }
+            RedirectUser();
         }
 
         protected void RegisterBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("Register.aspx");
+        }
+
+        private void RedirectUser()
+        {
+            string role = SessionHelper.GetCurrentUser()?.UserRole;
+
+            if (role == "Admin")
+            {
+                Response.Redirect("~/Views/Admin/Home.aspx");
+            }
+            else if (role == "Customer")
+            {
+                Response.Redirect("~/Views/User/Home.aspx");
+            }
+            else
+            {
+                // bwt fallback manatau ada bug
+                Response.Redirect("~/Views/Guest/Login.aspx");
+            }
+        }
+
+        private void ShowError(string message)
+        {
+            ErrorPanel.Visible = true;
+            ErrorLbl.Text = message;
         }
     }
 }

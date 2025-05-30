@@ -10,7 +10,7 @@ namespace lord_card_shop.Views.Customer
 {
     public partial class OrderCard : System.Web.UI.Page
     {
-        // OrderCardController Controller = new OrderCardController();
+        OrderCardController Controller = new OrderCardController();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -35,5 +35,21 @@ namespace lord_card_shop.Views.Customer
 
             //Response.Redirect("~/Views/Customer/CardDetails.aspx");
         }
+
+        protected void CartBtn_Click(object sender, EventArgs e)
+        {
+            //alur: passing card id to card details, and then go to card detail page
+
+            //Response.Redirect("~/Views/Customer/CardDetails.aspx");
+        }
+
+        protected void CardListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //alur: passing card id to card details, and then go to card detail page
+
+            //Response.Redirect("~/Views/Customer/CardDetails.aspx");
+        }
+
+        
     }
 }

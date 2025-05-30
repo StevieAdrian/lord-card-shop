@@ -16,8 +16,12 @@ namespace lord_card_shop.Helper
             return null;
         }
 
-        public static string validatePrice(decimal price)
+        public static string validatePrice(string cardPrice)
         {
+            if (!decimal.TryParse(cardPrice, out decimal price))
+            {
+                return "Price must be a valid number.";
+            }
             if (price < 10000)
             {
                 return "Price must be greater or equal than 10000.";
@@ -43,7 +47,13 @@ namespace lord_card_shop.Helper
             return null;
         }
 
-        // yg foil nyusul, mau liat frontend nya dlu
+        public static string validateFoil(byte[] foil)
+        {
+            if (foil == null || foil.Length != 1) return "Foil must be selected.";
+            if (foil[0] != 0 && foil[0] != 1) return "Foil must be either Yes/No.";
+
+            return null;
+        }
 
         private static bool isAlphaWithSpaces(string s)
         {

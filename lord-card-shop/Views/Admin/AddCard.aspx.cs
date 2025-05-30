@@ -1,6 +1,8 @@
-﻿using System;
+﻿using lord_card_shop.Controller;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -17,6 +19,10 @@ namespace lord_card_shop.Views.Admin
             //{
             //    Response.Redirect("~/Users/Home.aspx");
             //}
+            if (!IsPostBack)
+            {
+                ErrorPanel.Visible = false;
+            }
         }
 
         protected void btnInsert_Click(object sender, EventArgs e)
@@ -26,51 +32,26 @@ namespace lord_card_shop.Views.Admin
             string desc = txtDescription.Text.Trim();
             string type = ddlType.SelectedValue;
             string foil = ddlFoil.SelectedValue;
+            byte[] foilBytes = null;
 
-            // Validasi Name
-            if (name.Length < 5 || name.Length > 50 || !Regex.IsMatch(name, @"^[a-zA-Z\s]+$"))
+            Debug.WriteLine("debug 1");
+
+            if (foil.ToLower() == "yes") foilBytes = new byte[] { 1 };
+            else if (foil.ToLower() == "no") foilBytes = new byte[] { 0 };
+            //else
+            //{
+            //   Debug.WriteLine("debug 2");
+            //}
+
+            string result = CardController.AddCard(name, priceText, desc, type, foilBytes);
+            if (result != null)
             {
-                lblError.Text = "Name must be 5-50 alphabet characters only.";
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Visible = true;
+                lblError.Text = result;
+                ErrorPanel.Visible = true;
                 return;
             }
 
-            // Validasi Price
-            if (!decimal.TryParse(priceText, out decimal price) || price < 10000)
-            {
-                lblError.Text = "Price must be a number >= 10000.";
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Visible = true;
-                return;
-            }
-
-            // Validasi Description
-            if (string.IsNullOrWhiteSpace(desc))
-            {
-                lblError.Text = "Description must not be empty.";
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Visible = true;
-                return;
-            }
-
-            // Validasi Type
-            if (type != "Spell" && type != "Monster")
-            {
-                lblError.Text = "Type must be Spell or Monster.";
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Visible = true;
-                return;
-            }
-
-            // Validasi Foil
-            if (foil != "yes" && foil != "no")
-            {
-                lblError.Text = "Foil must be yes or no.";
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Visible = true;
-                return;
-            }
+            Response.Redirect("~/Views/Admin/ManageCard.aspx");
         }
     }
 }

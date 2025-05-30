@@ -117,6 +117,7 @@
     </Content>
     <Content Include="Views\Admin\AddCard.aspx" />
     <Content Include="Views\Admin\ManageCard.aspx" />
+    <Content Include="Views\Customer\CardDetails.aspx" />
     <Content Include="Views\Customer\OrderCard.aspx" />
     <Content Include="Views\Guest\Login.aspx" />
     <Content Include="Views\Guest\Register.aspx" />
@@ -192,6 +193,13 @@
     </Compile>
     <Compile Include="Views\Admin\ManageCard.aspx.designer.cs">
       <DependentUpon>ManageCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CardDetails.aspx.cs">
+      <DependentUpon>CardDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\CardDetails.aspx.designer.cs">
+      <DependentUpon>CardDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Customer\OrderCard.aspx.cs">
       <DependentUpon>OrderCard.aspx</DependentUpon>

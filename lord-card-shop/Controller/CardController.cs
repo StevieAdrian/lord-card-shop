@@ -33,5 +33,11 @@ namespace lord_card_shop.Controller
             CardHandler.AddCard(cardName, decimal.Parse(cardPrice), cardDesc, cardType, isFoil);
             return null;
         }
+
+        public static Card GetCardDetailById(int cardId)
+        {
+            return CardHandler.GetCardById(cardId);
+        }
+
     }
 }

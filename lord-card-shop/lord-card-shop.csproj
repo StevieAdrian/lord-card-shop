@@ -115,6 +115,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Admin\AddCard.aspx" />
     <Content Include="Views\Customer\OrderCard.aspx" />
     <Content Include="Views\Guest\Login.aspx" />
     <Content Include="Views\Guest\Register.aspx" />
@@ -177,6 +178,12 @@
     <Compile Include="Repository\TransactionDetailRepository.cs" />
     <Compile Include="Repository\TransactionHeaderRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Views\Admin\AddCard.aspx.cs">
+      <DependentUpon>AddCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AddCard.aspx.designer.cs">
+      <DependentUpon>AddCard.aspx</DependentUpon>
     <Compile Include="Views\Customer\OrderCard.aspx.cs">
       <DependentUpon>OrderCard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

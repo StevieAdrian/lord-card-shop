@@ -184,6 +184,7 @@
     </Compile>
     <Compile Include="Views\Admin\AddCard.aspx.designer.cs">
       <DependentUpon>AddCard.aspx</DependentUpon>
+	</Compile>
     <Compile Include="Views\Customer\OrderCard.aspx.cs">
       <DependentUpon>OrderCard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

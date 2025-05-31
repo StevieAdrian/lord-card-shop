@@ -35,31 +35,12 @@ namespace lord_card_shop.Views.Guest
                 return;
             }
 
-            RedirectUser();
+            Response.Redirect("~/Views/User/Home.aspx");
         }
 
         protected void RegisterBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("Register.aspx");
-        }
-
-        private void RedirectUser()
-        {
-            string role = SessionHelper.GetCurrentUser()?.UserRole;
-
-            if (role == "Admin")
-            {
-                Response.Redirect("~/Views/User/Home.aspx");
-            }
-            else if (role == "Customer")
-            {
-                Response.Redirect("~/Views/User/Home.aspx");
-            }
-            else
-            {
-                // bwt fallback manatau ada bug
-                Response.Redirect("~/Views/Guest/Login.aspx");
-            }
         }
 
         private void ShowError(string message)

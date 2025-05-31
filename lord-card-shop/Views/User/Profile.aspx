@@ -10,9 +10,16 @@
                 <hr />
             
                 <div class="mb-3">
+                    <asp:Panel ID="ErrorPanel" runat="server" Visible="false">
+                        <div class="alert alert-danger">
+                            <asp:Label ID="ErrorLbl" runat="server" ForeColor="Red"></asp:Label>
+                        </div>
+                    </asp:Panel>
+                </div>
+
+                <div class="mb-3">
                     <asp:Label Text="Username:" runat="server" />
                     <asp:TextBox CssClass="form-control form-control-md" ID="UsernameBox" placeholder="Enter username" runat="server" ReadOnly="True" />
-                    <asp:Label ID="UsernameErrorLbl" runat="server" ForeColor="Red"></asp:Label>
                 </div>
 
                 <div class="mb-3">
@@ -28,8 +35,12 @@
                     <asp:Label ID="GenderErrorLbl" runat="server" ForeColor="Red"></asp:Label>
                 </div>
 
-                <hr />
+                <div class="mb-3">
+                    <asp:Label Text="Date of Birth:" runat="server" />
+                    <asp:TextBox CssClass="form-control form-control-md" ID="DOBBox" placeholder="DD/MM/YYYY" runat="server" TextMode="Date" ReadOnly="True"></asp:TextBox>
+                </div>
 
+                <hr />
                 <div class="mb-3">
                     <asp:Label Text="Old Password:" runat="server" />
                     <asp:TextBox CssClass="form-control form-control-md" ID="OldPassBox" placeholder="Enter your old password" runat="server" TextMode="Password" ReadOnly="True" />

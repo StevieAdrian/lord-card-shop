@@ -42,7 +42,7 @@
                                 <asp:LinkButton class="nav-link" ID="navCartBtn" runat="server" href="/Views/Customer/CustomerCarts.aspx" Visible="False">Cart</asp:LinkButton>
                             </li>
                             <li class="nav-item">
-                                <asp:LinkButton class="nav-link" ID="navHistoryBtn" runat="server" Visible="False">History</asp:LinkButton>
+                                <asp:LinkButton class="nav-link" ID="navHistoryBtn" runat="server" href="/Views/Customer/TransactionHistory.aspx" Visible="False">History</asp:LinkButton>
                             </li>
 
                             <!-- Only accessible for admin -->

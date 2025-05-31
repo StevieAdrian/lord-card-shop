@@ -1,7 +1,9 @@
 ﻿using lord_card_shop.Factory;
+using lord_card_shop.Helper;
 using lord_card_shop.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -27,5 +29,37 @@ namespace lord_card_shop.Repository
                      .Select(th => th.TransactionID)
                      .FirstOrDefault();
         }
+
+        public static DataTable GetTransactionByUserId(int id)
+        {
+            var query = from th in db.TransactionHeaders
+                        where th.CustomerID == id
+                        select new
+                        {
+                            th.TransactionID,
+                            th.TransactionDate,
+                            th.Status,
+                            TotalPrice = th.TransactionDetails.Sum(td => (decimal?)(td.Quantity * td.Card.CardPrice)) ?? 0
+                        };
+
+            return DataTableHelper.ToDataTable(query.ToList());
+        }
+
+        public static DataTable GetTransactionByTrId(int id)
+        {
+            var query = from th in db.TransactionHeaders
+                        where th.TransactionID == id
+                        select new
+                        {
+                            th.TransactionID,
+                            th.CustomerID,
+                            th.TransactionDate,
+                            th.Status,
+                            TotalPrice = th.TransactionDetails.Sum(td => (decimal?)(td.Quantity * td.Card.CardPrice)) ?? 0
+                        };
+
+            return DataTableHelper.ToDataTable(query.ToList());
+        }
+
     }
 }

@@ -67,5 +67,12 @@ namespace lord_card_shop.Repository
             var list = query.ToList();
             return DataTableHelper.ToDataTable(list);
         }
+
+        public static void ClearCart(int userId)
+        {
+            var carts = db.Carts.Where(c => c.UserID == userId).ToList();
+            db.Carts.RemoveRange(carts);
+            db.SaveChanges();
+        }
     }
 }

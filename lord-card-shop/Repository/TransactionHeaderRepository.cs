@@ -11,16 +11,21 @@ namespace lord_card_shop.Repository
     {
         private static LocalDatabaseEntities db = new LocalDatabaseEntities();
 
-        public static void AddTransactionHeader(DateTime transactionDate, int customerId, string status)
+        public static int AddTransactionHeader(DateTime transactionDate, int customerId, string status)
         {
             TransactionHeader th = TransactionHeaderFactory.CreateNewTransactionHeader(transactionDate, customerId, status);
             db.TransactionHeaders.Add(th);
             db.SaveChanges();
+            return th.TransactionID;
         }
 
-        public static List<TransactionHeader> GetAllTransactionHeaders()
+        public static int GetTransaction(int userId, DateTime date)
         {
-            return db.TransactionHeaders.ToList();
+            return db.TransactionHeaders
+                     .Where(th => th.CustomerID == userId && th.TransactionDate == date)
+                     .OrderByDescending(th => th.TransactionID)
+                     .Select(th => th.TransactionID)
+                     .FirstOrDefault();
         }
     }
 }

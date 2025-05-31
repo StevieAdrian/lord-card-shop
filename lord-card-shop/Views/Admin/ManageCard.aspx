@@ -1,4 +1,4 @@
-﻿45<%@ Page Language="C#" MasterPageFile="~/Views/Website.Master" AutoEventWireup="true" CodeBehind="ManageCard.aspx.cs" Inherits="lord_card_shop.Views.Admin.ManageCard" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Website.Master" AutoEventWireup="true" CodeBehind="ManageCard.aspx.cs" Inherits="lord_card_shop.Views.Admin.ManageCard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
 

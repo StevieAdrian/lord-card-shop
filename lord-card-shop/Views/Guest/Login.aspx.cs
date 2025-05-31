@@ -49,7 +49,7 @@ namespace lord_card_shop.Views.Guest
 
             if (role == "Admin")
             {
-                Response.Redirect("~/Views/Admin/Home.aspx");
+                Response.Redirect("~/Views/User/Home.aspx");
             }
             else if (role == "Customer")
             {

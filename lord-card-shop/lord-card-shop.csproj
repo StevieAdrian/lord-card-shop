@@ -117,6 +117,8 @@
     </Content>
     <Content Include="Views\Admin\AddCard.aspx" />
     <Content Include="Views\Admin\ManageCard.aspx" />
+    <Content Include="Views\Admin\OrderQueue.aspx" />
+    <Content Include="Views\Admin\TransactionHistoryAdmin.aspx" />
     <Content Include="Views\Customer\CardDetails.aspx" />
     <Content Include="Views\Customer\Checkout.aspx" />
     <Content Include="Views\Customer\CustomerCarts.aspx" />
@@ -200,6 +202,20 @@
     </Compile>
     <Compile Include="Views\Admin\ManageCard.aspx.designer.cs">
       <DependentUpon>ManageCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\OrderQueue.aspx.cs">
+      <DependentUpon>OrderQueue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\OrderQueue.aspx.designer.cs">
+      <DependentUpon>OrderQueue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\TransactionHistoryAdmin.aspx.cs">
+      <DependentUpon>TransactionHistoryAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\TransactionHistoryAdmin.aspx.designer.cs">
+      <DependentUpon>TransactionHistoryAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Customer\CardDetails.aspx.cs">
       <DependentUpon>CardDetails.aspx</DependentUpon>

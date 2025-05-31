@@ -15,6 +15,10 @@ namespace lord_card_shop.Controller
         {
             return TransactionHandler.CheckoutProcess(userId);
         }
+        public static DataTable FetchAllTransactions()
+        {
+            return TransactionHeaderRepository.GetAllTransactions();
+        }
 
         public static DataTable FetchHistory(int userId)
         {
@@ -29,6 +33,16 @@ namespace lord_card_shop.Controller
         public static DataTable GetTransactionInfo(int transactionId)
         {
             return TransactionHeaderRepository.GetTransactionByTrId(transactionId);
+        }
+
+        public static DataTable FetchStatus()
+        {
+            return TransactionHeaderRepository.GetStatus();
+        }
+
+        public static void UpdateHandled(int transactionId)
+        {
+            TransactionHeaderRepository.UpdateTransaction(transactionId, "Handled");
         }
     }
 }

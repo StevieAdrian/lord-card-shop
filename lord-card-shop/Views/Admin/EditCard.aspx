@@ -1,14 +1,12 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Website.Master" AutoEventWireup="true" CodeBehind="AddCard.aspx.cs" Inherits="lord_card_shop.Views.Admin.AddCard" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Website.Master" AutoEventWireup="true" CodeBehind="EditCard.aspx.cs" Inherits="lord_card_shop.Views.Admin.EditCard" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container py-lg-3">
-    <asp:Button ID="btnBack" runat="server" Text="Back" CssClass="btn btn-secondary" OnClick="btnBack_Click" />
         <div class="card my-5">
             <div class="card-body">
-                <h2 class="card-title">Add Card</h2>
+                <h2 class="card-title">Edit Card</h2>
                 <hr />
 
                 <asp:Panel ID="ErrorPanel" runat="server" Visible="false">
@@ -17,25 +15,26 @@
                     </div>
                 </asp:Panel>
 
+                <asp:HiddenField ID="hfCardID" runat="server" />
+
                 <div class="mb-3">
                     <asp:Label ID="NameLbl" runat="server" Text="Name:" />
-                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Enter card name" />
+                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control" />
                 </div>
 
                 <div class="mb-3">
                     <asp:Label ID="PriceLbl" runat="server" Text="Price:" />
-                    <asp:TextBox ID="txtPrice" runat="server" CssClass="form-control" placeholder="Enter card price" />
+                    <asp:TextBox ID="txtPrice" runat="server" CssClass="form-control" />
                 </div>
 
                 <div class="mb-3">
                     <asp:Label ID="DescLbl" runat="server" Text="Description:" />
-                    <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" placeholder="Enter description" />
+                    <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" />
                 </div>
 
                 <div class="mb-3">
                     <asp:Label ID="TypeLbl" runat="server" Text="Type:" />
                     <asp:DropDownList ID="ddlType" runat="server" CssClass="form-select">
-                        <asp:ListItem Text="-- Select Type --" Value="" />
                         <asp:ListItem Text="Spell" Value="Spell" />
                         <asp:ListItem Text="Monster" Value="Monster" />
                     </asp:DropDownList>
@@ -44,14 +43,14 @@
                 <div class="mb-3">
                     <asp:Label ID="FoilLbl" runat="server" Text="Foil:" />
                     <asp:DropDownList ID="ddlFoil" runat="server" CssClass="form-select">
-                        <asp:ListItem Text="-- Select --" Value="" />
-                        <asp:ListItem Text="Yes" Value="yes" Selected="True"/>
+                        <asp:ListItem Text="Yes" Value="yes" />
                         <asp:ListItem Text="No" Value="no" />
                     </asp:DropDownList>
                 </div>
 
                 <div class="mb-3">
-                    <asp:Button ID="btnInsert" runat="server" Text="Insert" CssClass="btn btn-primary" OnClick="btnInsert_Click" />
+                    <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-primary me-2" OnClick="btnUpdate_Click" />
+                    <asp:Button ID="btnBack" runat="server" Text="Back" CssClass="btn btn-secondary" OnClick="btnBack_Click" />
                 </div>
             </div>
         </div>

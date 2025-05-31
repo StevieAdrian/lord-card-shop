@@ -116,6 +116,7 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Admin\AddCard.aspx" />
+    <Content Include="Views\Admin\EditCard.aspx" />
     <Content Include="Views\Admin\ManageCard.aspx" />
     <Content Include="Views\Admin\OrderQueue.aspx" />
     <Content Include="Views\Admin\TransactionHistoryAdmin.aspx" />
@@ -195,6 +196,13 @@
     </Compile>
     <Compile Include="Views\Admin\AddCard.aspx.designer.cs">
       <DependentUpon>AddCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\EditCard.aspx.cs">
+      <DependentUpon>EditCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\EditCard.aspx.designer.cs">
+      <DependentUpon>EditCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\ManageCard.aspx.cs">
       <DependentUpon>ManageCard.aspx</DependentUpon>

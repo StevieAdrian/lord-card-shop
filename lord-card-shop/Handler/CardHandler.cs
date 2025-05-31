@@ -26,5 +26,19 @@ namespace lord_card_shop.Handler
             return CardRepository.GetCardById(cardId);
         }
 
+        public static List<Card> GetAllCards()
+        {
+            return CardRepository.GetAllCards();
+        }
+
+        public static void DeleteCard(int id)
+        {
+            CardRepository.DeleteCard(id);
+        }
+
+        public static void UpdateCard(int id, string name, decimal price, string desc, string type, byte[] foil)
+        {
+            CardRepository.UpdateCard(id, name, price, desc, type, foil);
+        }
     }
 }

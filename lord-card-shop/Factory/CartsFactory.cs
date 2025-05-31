@@ -11,7 +11,7 @@ namespace lord_card_shop.Factory
         public static Cart CreateNewCarts(int cardId, int userId, int quantity)
         {
             Cart cart = new Cart();
-            cart.CartID = cardId;
+            cart.CardID = cardId;
             cart.UserID = userId;
             cart.Quantity = quantity;
 

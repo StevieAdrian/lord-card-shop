@@ -2,6 +2,7 @@
 using lord_card_shop.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -9,12 +10,12 @@ namespace lord_card_shop.Handler
 {
     public class CartsHandler
     {
-        public static string AddToCart(int userId, int cardId, int quantity)
+        public static string AddToCart(int cardId, int userId, int quantity)
         {
             try
             {
                 List<Cart> cart = CartsRepository.GetCartsById(userId);
-                Cart exist = cart.Find(c => c.CartID == cardId);
+                Cart exist = cart.Find(c => c.CardID == cardId);
 
                 if (exist != null)
                 {
@@ -38,6 +39,10 @@ namespace lord_card_shop.Handler
             return CartsRepository.GetCartsById(id);
         }
 
+        public static DataTable GetCartDisplayByUserId(int userId)
+        {
+            return CartsRepository.GetCartDataByUserId(userId);
+        }
         /*
         public static string CheckoutCart(int id)
         {

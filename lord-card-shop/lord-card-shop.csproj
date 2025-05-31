@@ -118,6 +118,7 @@
     <Content Include="Views\Admin\AddCard.aspx" />
     <Content Include="Views\Admin\ManageCard.aspx" />
     <Content Include="Views\Customer\CardDetails.aspx" />
+    <Content Include="Views\Customer\CustomerCarts.aspx" />
     <Content Include="Views\Customer\OrderCard.aspx" />
     <Content Include="Views\Guest\Login.aspx" />
     <Content Include="Views\Guest\Register.aspx" />
@@ -144,6 +145,7 @@
     <Compile Include="Helper\CookieHelper.cs" />
     <Compile Include="Helper\RegisterValidateHelper.cs" />
     <Compile Include="Helper\SessionHelper.cs" />
+    <Compile Include="Helper\DataTableHelper.cs" />
     <Compile Include="Model\Card.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -200,6 +202,13 @@
     </Compile>
     <Compile Include="Views\Customer\CardDetails.aspx.designer.cs">
       <DependentUpon>CardDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerCarts.aspx.cs">
+      <DependentUpon>CustomerCarts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerCarts.aspx.designer.cs">
+      <DependentUpon>CustomerCarts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Customer\OrderCard.aspx.cs">
       <DependentUpon>OrderCard.aspx</DependentUpon>

@@ -47,7 +47,29 @@ namespace lord_card_shop.Views.Customer
         protected void CartBtn_Click(object sender, EventArgs e)
         {
             //alur: passing card id to card details, and then go to card detail page
+            LinkButton btn = (LinkButton)sender;
+            ListViewItem item = (ListViewItem)btn.NamingContainer;
 
+            HiddenField res = (HiddenField)item.FindControl("CardID");
+           /* int tes = Convert.ToInt32(hfCardId.Value);
+            System.Diagnostics.Debug.WriteLine("debug 1: " + tes);
+            */
+
+            if (res != null)
+            {
+                int cardId = Convert.ToInt32(res.Value);
+                // int userId = Convert.ToInt32(Session["UserId"]);
+                int userId = 1; // to be changed after session bug fixed
+                int quantity = 1;
+
+                string result = CartsController.AddItemToCart(cardId, userId, quantity);
+
+                Response.Write("<script>alert('" + result + "');</script>");
+            }
+            else
+            {
+                Response.Redirect("~/Views/Login.aspx");
+            }
             //Response.Redirect("~/Views/Customer/CardDetails.aspx");
         }
 

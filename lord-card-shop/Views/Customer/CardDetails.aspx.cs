@@ -13,7 +13,17 @@ namespace lord_card_shop.Views.Customer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["id"] == null)
+                {
+                    Response.Redirect("OrderCard.aspx");
+                    return;
+                }
 
+                if (int.TryParse(Request.QueryString["id"], out int cardId)) LoadCardDetails(cardId);
+                else Response.Redirect("OrderCard.aspx");
+            }
         }
 
         private void LoadCardDetails(int cardId)
@@ -33,7 +43,7 @@ namespace lord_card_shop.Views.Customer
 
         protected void BackBtn_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("OrderCard.aspx");
         }
 
     }

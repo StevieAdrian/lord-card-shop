@@ -32,8 +32,16 @@ namespace lord_card_shop.Views.Customer
         protected void DetailBtn_Click(object sender, EventArgs e)
         {
             //alur: passing card id to card details, and then go to card detail page
+            LinkButton btn = (LinkButton)sender;
+            ListViewItem item = (ListViewItem)btn.NamingContainer;
+
+            HiddenField id = (HiddenField)item.FindControl("CardID");
 
             //Response.Redirect("~/Views/Customer/CardDetails.aspx");
+            if (id != null && int.TryParse(id.Value, out int cardId))
+            {
+                Response.Redirect("CardDetails.aspx?id=" + cardId);
+            }
         }
 
         protected void CartBtn_Click(object sender, EventArgs e)

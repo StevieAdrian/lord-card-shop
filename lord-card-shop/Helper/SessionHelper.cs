@@ -14,21 +14,21 @@ namespace lord_card_shop.Helper
             if (user == null) return;
 
             HttpSessionState session = HttpContext.Current.Session;
-            session["CurrentUser"] = user;
-            session["CurrentUserID"] = user.UserID;
-            session["CurrentUsername"] = user.UserName;
-            session["CurrentUserRole"] = user.UserRole;
+            session["user"] = user;
+            session["userid"] = user.UserID;
+            session["username"] = user.UserName;
+            session["role"] = user.UserRole;
             session.Timeout = 120;
         }
 
         public static User GetCurrentUser()
         {
-            return HttpContext.Current.Session["CurrentUser"] as User;
+            return HttpContext.Current.Session["user"] as User;
         }
 
         public static bool IsUserLoggedIn()
         {
-            return HttpContext.Current.Session["CurrentUser"] != null;
+            return HttpContext.Current.Session["user"] != null;
         }
 
         public static void ClearUserSession()

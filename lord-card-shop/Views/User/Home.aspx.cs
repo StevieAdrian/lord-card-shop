@@ -5,13 +5,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace lord_card_shop.View.User
+namespace lord_card_shop.Views.User
 {
     public partial class Home : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                username.Text = HttpContext.Current.Session["username"]?.ToString();
+            }
         }
+
     }
 }

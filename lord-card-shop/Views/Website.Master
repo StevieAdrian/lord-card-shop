@@ -31,15 +31,15 @@
                         <ul class="nav navbar-nav me-auto">
                             <!-- Only accessible for logged in user -->
                             <li class="nav-item">
-                                <asp:LinkButton class="nav-link" ID="navHomeBtn" runat="server" Visible="False">Home</asp:LinkButton>
+                                <asp:LinkButton class="nav-link" ID="navHomeBtn" runat="server" href="/Views/User/Home.aspx" Visible="False">Home</asp:LinkButton>
                             </li>
 
                             <!-- Only accessible for customer -->
                             <li class="nav-item">
-                                <asp:LinkButton class="nav-link" ID="navOrderBtn" runat="server" Visible="false">Order Card</asp:LinkButton>
+                                <asp:LinkButton class="nav-link" ID="navOrderBtn" runat="server" href="/Views/Customer/OrderCard.aspx" Visible="false">Order Card</asp:LinkButton>
                             </li>
                             <li class="nav-item">
-                                <asp:LinkButton class="nav-link" ID="navCartBtn" runat="server" Visible="False">Cart</asp:LinkButton>
+                                <asp:LinkButton class="nav-link" ID="navCartBtn" runat="server" href="/Views/Customer/CustomerCarts.aspx" Visible="False">Cart</asp:LinkButton>
                             </li>
                             <li class="nav-item">
                                 <asp:LinkButton class="nav-link" ID="navHistoryBtn" runat="server" Visible="False">History</asp:LinkButton>
@@ -68,7 +68,7 @@
                         <ul class="navbar-nav ms-auto align-items-center">
                             <!-- Only accessible for logged in user -->
                             <li class="nav-item">
-                                <asp:LinkButton class="nav-link" ID="navLogoutBtn" runat="server" Visible="true">Logout</asp:LinkButton>
+                                <asp:LinkButton class="nav-link" ID="navLogoutBtn" OnClick="navLogoutBtn_Click" runat="server" Visible="true">Logout</asp:LinkButton>
                             </li>
 
                             <li class="nav-item">

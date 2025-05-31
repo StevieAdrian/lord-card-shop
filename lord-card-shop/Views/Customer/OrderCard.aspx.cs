@@ -79,6 +79,19 @@ namespace lord_card_shop.Views.Customer
             //Response.Redirect("~/Views/Customer/CardDetails.aspx");
         }
 
-        
+        protected void DownBtn_Click(object sender, EventArgs e)
+        {
+            //alur: passing card id to card details, and then go to card detail page
+
+            //Response.Redirect("~/Views/Customer/CardDetails.aspx");
+        }
+
+        protected void UpBtn_Click(object sender, EventArgs e)
+        {
+            //alur: passing card id to card details, and then go to card detail page
+
+            //Response.Redirect("~/Views/Customer/CardDetails.aspx");
+        }
+
     }
 }

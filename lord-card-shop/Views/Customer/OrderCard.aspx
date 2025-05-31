@@ -24,6 +24,17 @@
                             <h5 class="card-title"><%# Eval("CardName") %></h5>
                             <p class="card-text text-success"><%# Eval("CardPrice") %></p>
                         </div>
+                        <div id="QuantityDiv" runat="server" visible="true" style="display:inline-block;">
+                            <asp:Label ID="QuantityLbl" runat="server"><small>Quantity</small></asp:Label> <br />
+                            <asp:Button ID="DownBtn" runat="server" Text="-" OnClick="DownBtn_Click" />
+                            <asp:TextBox CssClass="text-center" ID="QuantityBox" Text="1" runat="server" ReadOnly="true"></asp:TextBox>
+                            <asp:Button ID="UpBtn" runat="server" Text="+" OnClick="UpBtn_Click" />
+                        </div>
+
+                        <div style="display: flex; margin-top: 1rem; width: 100%; justify-content:space-between">
+                            <asp:LinkButton CssClass="btn btn-dark" ID="LinkButton1" runat="server" OnClick="DetailBtn_Click" >View Details</asp:LinkButton>
+                            <asp:LinkButton CssClass="btn btn-warning" ID="LinkButton2"  runat="server" OnClick="CartBtn_Click" >Add Cart</asp:LinkButton>
+                        </div>
                         <asp:LinkButton CssClass="btn btn-outline-warning" ID="CartBtn"  runat="server" OnClick="CartBtn_Click" >Add Cart</asp:LinkButton>
                         <asp:LinkButton CssClass="btn btn-outline-dark" ID="DetailBtn" runat="server" OnClick="DetailBtn_Click" >View Details</asp:LinkButton>
                     </div>

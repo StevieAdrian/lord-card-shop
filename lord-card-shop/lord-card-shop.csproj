@@ -147,6 +147,7 @@
     <Compile Include="Handler\CardsHandler.cs" />
     <Compile Include="Handler\CartsHandler.cs" />
     <Compile Include="Handler\LoginHandler.cs" />
+    <Compile Include="Handler\ProfileHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
     <Compile Include="Handler\TransactionHandler.cs" />
     <Compile Include="Helper\CardValidateHelper.cs" />

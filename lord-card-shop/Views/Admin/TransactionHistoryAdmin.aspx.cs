@@ -1,4 +1,5 @@
 ﻿using lord_card_shop.Controller;
+using lord_card_shop.Helper;
 using lord_card_shop.Model;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,11 @@ namespace lord_card_shop.Views.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!MiddlewareHelper.CheckLogin() || !MiddlewareHelper.CheckAdmin())
+            {
+                return;
+            }
+
             if (!IsPostBack)
             {
                 LoadAllTransactions();

@@ -152,6 +152,7 @@
     <Compile Include="Handler\TransactionHandler.cs" />
     <Compile Include="Helper\CardValidateHelper.cs" />
     <Compile Include="Helper\CookieHelper.cs" />
+    <Compile Include="Helper\MiddlewareHelper.cs" />
     <Compile Include="Helper\RegisterValidateHelper.cs" />
     <Compile Include="Helper\SessionHelper.cs" />
     <Compile Include="Helper\DataTableHelper.cs" />

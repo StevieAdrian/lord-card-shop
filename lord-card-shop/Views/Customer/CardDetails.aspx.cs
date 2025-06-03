@@ -1,4 +1,5 @@
 ﻿using lord_card_shop.Controller;
+using lord_card_shop.Helper;
 using lord_card_shop.Model;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,11 @@ namespace lord_card_shop.Views.Customer
         {
             if (!IsPostBack)
             {
+                if (!MiddlewareHelper.CheckLogin() || !MiddlewareHelper.CheckCustomer())
+                {
+                    return;
+                }
+
                 if (Request.QueryString["id"] == null)
                 {
                     Response.Redirect("OrderCard.aspx");

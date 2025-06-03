@@ -124,6 +124,7 @@
     <Content Include="Views\Customer\Checkout.aspx" />
     <Content Include="Views\Customer\CustomerCarts.aspx" />
     <Content Include="Views\Customer\OrderCard.aspx" />
+    <Content Include="Views\Customer\SearchCard.aspx" />
     <Content Include="Views\Customer\TransactionDetail.aspx" />
     <Content Include="Views\Customer\TransactionHistory.aspx" />
     <Content Include="Views\Guest\Login.aspx" />
@@ -254,6 +255,13 @@
     </Compile>
     <Compile Include="Views\Customer\OrderCard.aspx.designer.cs">
       <DependentUpon>OrderCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\SearchCard.aspx.cs">
+      <DependentUpon>SearchCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\SearchCard.aspx.designer.cs">
+      <DependentUpon>SearchCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Customer\TransactionDetail.aspx.cs">
       <DependentUpon>TransactionDetail.aspx</DependentUpon>

@@ -80,6 +80,7 @@ namespace lord_card_shop.Views.User
                 else
                 {
                     ErrorLbl.Text = "";
+                    ErrorPanel.Visible = false;
                     ProfileHandler.UpdateUser(
                         UsernameBox.Text.Trim(),
                         EmailBox.Text.Trim(),

@@ -30,7 +30,7 @@ namespace lord_card_shop.Handler
         {
             errorMessage = UsernameIsTaken(username) ?? RegisterValidateHelper.ValidateUsername(username) ?? RegisterValidateHelper.ValidateEmail(email) ?? RegisterValidateHelper.ValidateDOB(dob) ?? RegisterValidateHelper.ValidateGender(maleChecked, femaleChecked);
 
-            if (string.IsNullOrEmpty(newPassword))
+            if (!string.IsNullOrEmpty(newPassword))
                 errorMessage = ValidateOldPassword(oldPassword) ?? RegisterValidateHelper.ValidatePassword(newPassword) ?? RegisterValidateHelper.ValidateConfirmPassword(newPassword, confirmPassword);
 
             if (errorMessage != null) return false;
@@ -43,9 +43,11 @@ namespace lord_card_shop.Handler
             DateTime dobParsed = DateTime.Parse(dob);
             var userid = SessionHelper.GetCurrentUser();
 
+            if (string.IsNullOrEmpty(newPassword)) newPassword = userid.UserPassword;
+
             try
             {
-                UserRepository.UpdateUser(userid.UserID, email, oldPassword, newPassword, username, maleChecked ? "Male" : "Female", dobParsed);
+                UserRepository.UpdateUser(userid.UserID, email, userid.UserPassword, newPassword, username, maleChecked ? "Male" : "Female", dobParsed);
                 return true;
             }
             catch

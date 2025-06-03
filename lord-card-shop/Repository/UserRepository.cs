@@ -14,6 +14,7 @@ namespace lord_card_shop.Repository
         public static void AddUser(string userName, string userEmail, string userPassword, string userGender, DateTime userDOB, string userRole)
         {
             User user = UserFactory.CreateNewUser(userName, userEmail, userPassword, userGender, userDOB, userRole);
+
             db.Users.Add(user);
             db.SaveChanges();
         }

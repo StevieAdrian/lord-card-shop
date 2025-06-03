@@ -1,6 +1,7 @@
 ﻿using lord_card_shop.Handler;
 using lord_card_shop.Helper;
 using lord_card_shop.Model;
+using lord_card_shop.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,5 +70,11 @@ namespace lord_card_shop.Controller
             CardHandler.UpdateCard(cardId, name, price, desc, type, foilBytes);
             return null;
         }
+
+        public static List<Card> SearchCard(string keyword)
+        {
+            return CardRepository.GetCardsByName(keyword);
+        }
+
     }
 }

@@ -22,8 +22,18 @@ namespace lord_card_shop.Views.Customer
 
             if (!IsPostBack)
             {
-                CardListView.DataSource = Controller.ViewCardList();
-                CardListView.DataBind();
+                string keyword = Request.QueryString["keyword"];
+
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    CardListView.DataSource = Controller.SearchCard(keyword);
+                }
+                else
+                {
+                    CardListView.DataSource = Controller.ViewCardList();
+                }
+
+                    CardListView.DataBind();
             }
         }
 

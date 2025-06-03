@@ -50,5 +50,10 @@ namespace lord_card_shop.Repository
                 db.SaveChanges();
             }
         }
+
+        public static List<Card> GetCardsByName(string keyword)
+        {
+            return db.Cards.Where(c => c.CardName.Contains(keyword)).ToList();
+        }
     }
 }

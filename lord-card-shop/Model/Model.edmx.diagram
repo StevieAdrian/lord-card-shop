@@ -5,14 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d560070d12d74c938dd635a5e5edc9cf" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="LocalDatabaseModel.Card" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LocalDatabaseModel.Card" Width="1.5" PointX="5.125" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="LocalDatabaseModel.Cart" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LocalDatabaseModel.TransactionHeader" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LocalDatabaseModel.User" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LocalDatabaseModel.TransactionHeader" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LocalDatabaseModel.User" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
         <AssociationConnector Association="LocalDatabaseModel.FK_Carts_Card" ManuallyRouted="false" />
         <AssociationConnector Association="LocalDatabaseModel.FK_Carts_Users" ManuallyRouted="false" />
         <AssociationConnector Association="LocalDatabaseModel.FK_TransactionHeader_Users" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="LocalDatabaseModel.TransactionDetail" Width="1.5" PointX="5.25" PointY="6.75" />
+        <EntityTypeShape EntityType="LocalDatabaseModel.TransactionDetail" Width="1.5" PointX="8" PointY="4.5" />
         <AssociationConnector Association="LocalDatabaseModel.FK_TransactionDetail_Card" />
         <AssociationConnector Association="LocalDatabaseModel.FK_TransactionDetail_TransactionHeader" />
         </Diagram>

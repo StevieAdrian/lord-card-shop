@@ -2,6 +2,7 @@
 using lord_card_shop.Helper;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -95,7 +96,7 @@ namespace lord_card_shop.Views
             }
         }
 
-        protected void navSearchBar_TextChanged(object sender, EventArgs e)
+        protected void NavSearchBar_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -110,6 +111,25 @@ namespace lord_card_shop.Views
             SessionHelper.ClearUserSession();
 
             Response.Redirect("~/Views/Guest/Login.aspx"); 
+        }
+
+        protected void navSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = navSearchBar.Text.Trim();
+
+            Debug.WriteLine("test bos");
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                return;
+            }
+
+            string role = Session["role"]?.ToString();
+
+            if (role == "Customer") Response.Redirect("~/Views/Customer/OrderCard.aspx?keyword=" + HttpUtility.UrlEncode(keyword));
+            else if (role == "Admin") Response.Redirect("~/Views/Admin/ManageCard.aspx?keyword=" + HttpUtility.UrlEncode(keyword));
+
+            return;
         }
     }
 }

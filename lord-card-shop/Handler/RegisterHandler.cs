@@ -18,6 +18,12 @@ namespace lord_card_shop.Handler
 
             if (errorMessage != null) return false;
 
+            if (UserRepository.GetUserByUsername(username) != null)
+            {
+                errorMessage = "Username already exists!";
+                return false;
+            }
+
             DateTime dobParsed = DateTime.Parse(dob);
 
             try

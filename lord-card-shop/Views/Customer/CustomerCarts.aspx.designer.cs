@@ -15,6 +15,15 @@ namespace lord_card_shop.Views.Customer
     {
 
         /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
         /// CartsGridView control.
         /// </summary>
         /// <remarks>
@@ -31,5 +40,14 @@ namespace lord_card_shop.Views.Customer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button CheckoutBtn;
+
+        /// <summary>
+        /// ClearCartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ClearCartBtn;
     }
 }

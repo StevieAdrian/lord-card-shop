@@ -39,5 +39,23 @@ namespace lord_card_shop.Views.Customer
         {
             Response.Redirect("Checkout.aspx");
         }
+
+        protected void ClearCartBtn_Click(object sender, EventArgs e)
+        {
+            int userId = Convert.ToInt32(HttpContext.Current.Session["userid"]);
+            string result = CartsController.ClearCarts(userId);
+
+            if (result == "Success!")
+            {
+                LoadCart();
+                lblMessage.Text = "Your cart has been cleared!";
+                lblMessage.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                lblMessage.Text = "Failed to clear your cart. Please try again.";
+                lblMessage.ForeColor = System.Drawing.Color.Red;
+            }
+        }
     }
 }

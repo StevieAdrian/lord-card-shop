@@ -14,12 +14,6 @@ namespace lord_card_shop.Views.Guest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (!IsPostBack)
-            {
-                // tar tambah middleware
-            }
-
         }
         protected void LoginBtn_Click(object sender, EventArgs e)
         {

@@ -43,12 +43,18 @@ namespace lord_card_shop.Handler
         {
             return CartsRepository.GetCartDataByUserId(userId);
         }
-        /*
-        public static string CheckoutCart(int id)
+        public static string ClearCart(int userId)
         {
-            to be implemented
+            try
+            {
+                CartsRepository.ClearCart(userId);
+                return "Success!";
+            }
+            catch (Exception ex)
+            {
+                return "Failed to clear your cart." + ex.Message;
+            }
         }
-        */
 
     }
 }

@@ -33,21 +33,21 @@ namespace lord_card_shop.Views
             string currentPage = System.IO.Path.GetFileName(Request.Url.AbsolutePath).ToLower();
 
             if (currentPage == "home.aspx")
-                navHomeBtn.CssClass += " active";
+                navHomeBtn.CssClass = "p-2 active";
             else if (currentPage == "ordercard.aspx") 
-                navOrderBtn.CssClass += " active";
-            else if (currentPage == "cart.aspx") 
-                navCartBtn.CssClass += " active";
-            else if (currentPage == "history.aspx")
-                navHistoryBtn.CssClass += " active";
+                navOrderBtn.CssClass = "p-2 active";
+            else if (currentPage == "customercarts.aspx") 
+                navCartBtn.CssClass = "p-2 active";
+            else if (currentPage == "transactionhistory.aspx")
+                navHistoryBtn.CssClass = "p-2 active";
             else if (currentPage == "managecard.aspx")
-                navManageBtn.CssClass += " active";
-            else if (currentPage == "viewtransaction.aspx")
-                navViewBtn.CssClass += " active";
+                navManageBtn.CssClass = "p-2 active";
+            else if (currentPage == "transactionhistoryadmin.aspx")
+                navViewBtn.CssClass = "p-2 active";
             else if (currentPage == "transactionreport.aspx")
-                navReportBtn.CssClass += " active";
+                navReportBtn.CssClass = "p-2 active";
             else if (currentPage == "orderqueue.aspx")
-                navQueueBtn.CssClass += " active";
+                navQueueBtn.CssClass = "p-2 active";
              else if (currentPage == "profile.aspx")
                 navProfileBtn.CssClass = "p-2 active";
         }

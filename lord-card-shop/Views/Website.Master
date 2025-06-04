@@ -50,10 +50,10 @@
                                 <asp:LinkButton class="nav-link" ID="navManageBtn" runat="server" href="/Views/Admin/ManageCard.aspx" Visible="False">Manage Card</asp:LinkButton>
                             </li>
                             <li class="nav-item">
-                                <asp:LinkButton class="nav-link" ID="navViewBtn" runat="server" href="/Views/Admin/TransactionHistoryAdmin.aspx" Visible="False">View Transaction</asp:LinkButton>
+                                <asp:LinkButton class="nav-link" ID="navViewBtn" runat="server" href="/Views/Admin/TransactionHistoryAdmin.aspx" Visible="False">Transaction History</asp:LinkButton>
                             </li>
                             <li class="nav-item">
-                                <asp:LinkButton class="nav-link" ID="navReportBtn" runat="server" Visible="False">Transaction Report</asp:LinkButton>
+                                <asp:LinkButton class="nav-link" ID="navReportBtn" runat="server" href="/Views/Admin/TransactionReport.aspx" Visible="False">Transaction Report</asp:LinkButton>
                             </li>
                             <li class="nav-item">
                                 <asp:LinkButton class="nav-link" ID="navQueueBtn" runat="server" href="/Views/Admin/OrderQueue.aspx" Visible="False">Order Queue</asp:LinkButton>

@@ -22,7 +22,7 @@ namespace lord_card_shop.Views.Admin
             }
 
             CrystalReport1 report = new CrystalReport1();
-            CrystalReportViewer1.ReportSource = report;
+            //CrystalReportViewer1.ReportSource = report;
             DataSet1 ds = GetAllData();
             report.SetDataSource(ds);
         }

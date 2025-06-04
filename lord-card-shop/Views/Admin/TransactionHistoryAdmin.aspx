@@ -5,6 +5,17 @@
     <div class="container py-4">
         <h2 class="mb-4 text-center">All Transactions</h2>
 
+        <div class="d-flex justify-content-end mb-3">
+            <asp:DropDownList ID="statusFilterDropdown" runat="server" AutoPostBack="true"
+                OnSelectedIndexChanged="filterDropdown"
+                CssClass="form-select w-auto">
+                <asp:ListItem Text="All" Value="All" />
+                <asp:ListItem Text="Unhandled" Value="Unhandled" />
+                <asp:ListItem Text="Handled" Value="Handled" />
+            </asp:DropDownList>
+        </div>
+
+
         <asp:GridView ID="AdminTransactionGrid" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered" OnRowCommand="AdminTransactionGrid_RowCommand">
             <Columns>
                 <asp:BoundField DataField="TransactionID" HeaderText="Transaction ID" />

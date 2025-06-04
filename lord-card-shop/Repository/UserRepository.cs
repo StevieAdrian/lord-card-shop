@@ -42,7 +42,7 @@ namespace lord_card_shop.Repository
 
         public static void UpdateUser(int userId, string userEmail, string userOldPassword, string userNewPassword, string userName, string userGender, DateTime userDOB)
         {
-            User user = GetUser(userId, userOldPassword);
+            User user = GetUserByID(userId, userOldPassword);
             if (user == null)
             {
                 throw new Exception("User tidak ditemukan atau password lama salah.");
@@ -60,5 +60,9 @@ namespace lord_card_shop.Repository
             return db.Users.FirstOrDefault(u => u.UserName == username);
         }
 
+        public static User GetUserByID(int id, string password)
+        {
+            return db.Users.FirstOrDefault(u => u.UserID == id && u.UserPassword == password);
+        }
     }
 }

@@ -20,14 +20,19 @@ namespace lord_card_shop.Views.Admin
 
             if (!IsPostBack)
             {
-                LoadCards();
-            }
-        }
 
-        private void LoadCards()
-        {
-            gvCards.DataSource = CardController.GetAllCards();
-            gvCards.DataBind();
+                string keyword = Request.QueryString["keyword"];
+
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    gvCards.DataSource = CardController.SearchCard(keyword);
+                }
+                else
+                {
+                    gvCards.DataSource = CardController.GetAllCards();
+                }
+                gvCards.DataBind();
+            }
         }
 
         protected void gvCards_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -41,7 +46,8 @@ namespace lord_card_shop.Views.Admin
             else if (e.CommandName == "DeleteCard")
             {
                 CardController.DeleteCard(cardId);
-                LoadCards();
+                gvCards.DataSource = CardController.GetAllCards();
+                gvCards.DataBind();
             }
         }
 

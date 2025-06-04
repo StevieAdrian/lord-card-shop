@@ -1,0 +1,131 @@
+using lord_card_shop.Handler;
+using lord_card_shop.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace lord_card_shop.Views.Guest
+{
+    public partial class Register : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //if (Session["Username"] != null)
+            //{
+            //    // Kalau sudah login, redirect ke halaman lain misalnya homepage
+            //    Response.Redirect("Default.aspx");
+            //}
+
+        }
+
+        protected void RegisterBtn_Click(object sender, EventArgs e)
+        {
+            string errorMessage;
+            bool success = RegisterHandler.RegisterUser(
+               txtUsername.Text.Trim(),
+               txtEmail.Text.Trim(),
+               txtDOB.Text.Trim(),
+               txtPassword.Text,
+               txtConfirmPassword.Text,
+               rbMale.Checked,
+               rbFemale.Checked,
+               out errorMessage
+           );
+
+            if (!success)
+            {
+                ErrorLbl.Text = errorMessage;
+                ErrorPanel.Visible = !string.IsNullOrEmpty(ErrorLbl.Text);
+            }
+            else
+            {
+                Response.Redirect("~/Views/Guest/Login.aspx");
+            }
+        }
+
+        protected void LoginBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+    }
+}
+
+
+using lord_card_shop.Handler;
+using lord_card_shop.Helper;
+using lord_card_shop.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace lord_card_shop.Controller
+{
+    public class AuthController
+    {
+        public static string AuthenticateUser(string username, string password, bool rememberMe)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                return "Username and password must be filled!";
+            }
+
+            User user = LoginHandler.GetUser(username, password);
+
+            if (user == null)
+            {
+                return "Invalid username or password!";
+            }
+
+            SessionHelper.Session(user);
+
+            if (rememberMe)
+            {
+                CookieHelper.SetCookie(user.UserID);
+            }
+
+            return "";
+        }
+    }
+}
+
+
+using lord_card_shop.Helper;
+using lord_card_shop.Model;
+using lord_card_shop.Repository;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace lord_card_shop.Handler
+{
+    public class RegisterHandler
+    {   
+        private static LocalDatabaseEntities db = new LocalDatabaseEntities();
+
+        public static bool RegisterUser(string username, string email, string dob, string password, string confirmPassword, bool maleChecked, bool femaleChecked, out string errorMessage)
+        {
+            errorMessage = RegisterValidateHelper.ValidateUsername(username) ?? RegisterValidateHelper.ValidateEmail(email) ?? RegisterValidateHelper.ValidateDOB(dob) ?? RegisterValidateHelper.ValidatePassword(password) ?? RegisterValidateHelper.ValidateConfirmPassword(password, confirmPassword) ?? RegisterValidateHelper.ValidateGender(maleChecked, femaleChecked);
+
+            if (errorMessage != null) return false;
+
+            DateTime dobParsed = DateTime.Parse(dob);
+
+            try
+            {
+                UserRepository.AddUser(username, email, password, maleChecked ? "Male" : "Female", dobParsed, "Customer");
+
+                return true;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+    }
+}

@@ -15,7 +15,6 @@
             </asp:DropDownList>
         </div>
 
-
         <asp:GridView ID="AdminTransactionGrid" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered" OnRowCommand="AdminTransactionGrid_RowCommand">
             <Columns>
                 <asp:BoundField DataField="TransactionID" HeaderText="Transaction ID" />

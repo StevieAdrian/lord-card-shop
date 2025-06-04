@@ -12,7 +12,7 @@ namespace lord_card_shop.Views.Customer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!MiddlewareHelper.CheckLogin() || !MiddlewareHelper.CheckCustomer())
+            if (!MiddlewareHelper.CheckLogin())
             {
                 return;
             }
@@ -56,7 +56,11 @@ namespace lord_card_shop.Views.Customer
         }
         protected void BackBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TransactionHistory.aspx");
+            string role = SessionHelper.GetCurrentUser().UserRole;
+            if (role.Equals("Customer", StringComparison.OrdinalIgnoreCase))
+                Response.Redirect("~/Views/Customer/TransactionHistory.aspx");
+            else if (role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+                Response.Redirect("~/Views/Admin/TransactionHistoryAdmin.aspx");
         }
     }
 }

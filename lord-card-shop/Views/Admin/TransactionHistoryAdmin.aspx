@@ -5,15 +5,14 @@
     <div class="container py-4">
         <h2 class="mb-4 text-center">All Transactions</h2>
 
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle mb-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Filter
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">All</a></li>
-                <li><a class="dropdown-item" href="#">Handled</a></li>
-                <li><a class="dropdown-item" href="#">Unhandled</a></li>
-            </ul>
+        <div class="d-flex justify-content-end mb-3">
+            <asp:DropDownList ID="statusFilterDropdown" runat="server" AutoPostBack="true"
+                OnSelectedIndexChanged="filterDropdown"
+                CssClass="form-select w-auto">
+                <asp:ListItem Text="All" Value="All" />
+                <asp:ListItem Text="Unhandled" Value="Unhandled" />
+                <asp:ListItem Text="Handled" Value="Handled" />
+            </asp:DropDownList>
         </div>
 
         <asp:GridView ID="AdminTransactionGrid" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered" OnRowCommand="AdminTransactionGrid_RowCommand">

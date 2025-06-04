@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Website.master.cs" Inherits="lord_card_shop.Views.Website" %>
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Website.master.cs" Inherits="lord_card_shop.Views.Website" %>
 
 <!DOCTYPE html>
 
@@ -53,7 +53,7 @@
                                 <asp:LinkButton class="nav-link" ID="navViewBtn" runat="server" href="/Views/Admin/TransactionHistoryAdmin.aspx" Visible="False">Transaction History</asp:LinkButton>
                             </li>
                             <li class="nav-item">
-                                <asp:LinkButton class="nav-link" ID="navReportBtn" runat="server" Visible="False">Transaction Report</asp:LinkButton>
+                                <asp:LinkButton class="nav-link" ID="navReportBtn" runat="server" href="/Views/Admin/TransactionReport.aspx" Visible="False">Transaction Report</asp:LinkButton>
                             </li>
                             <li class="nav-item">
                                 <asp:LinkButton class="nav-link" ID="navQueueBtn" runat="server" href="/Views/Admin/OrderQueue.aspx" Visible="False">Order Queue</asp:LinkButton>

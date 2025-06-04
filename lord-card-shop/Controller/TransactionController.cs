@@ -25,8 +25,6 @@ namespace lord_card_shop.Controller
             return TransactionHandler.GetByUserId(userId);
         }
 
-
-
         public static DataTable FetchDetail(int transactionId)
         {
             return TransactionHandler.GetTransactionDetailsById(transactionId);
@@ -39,12 +37,11 @@ namespace lord_card_shop.Controller
 
         public static DataTable FetchStatus()
         {
-            return TransactionHeaderRepository.GetStatus();
+            return TransactionHandler.GetStatus();
         }
-
         public static void UpdateHandled(int transactionId)
         {
-            TransactionHeaderRepository.UpdateTransaction(transactionId, "Handled");
+            TransactionHandler.UpdateTransaction(transactionId, "Handled");
         }
 
         public static DataTable FetchByStatus(string status)

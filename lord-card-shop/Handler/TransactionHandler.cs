@@ -55,6 +55,14 @@ namespace lord_card_shop.Handler
             return TransactionHeaderRepository.GetTransactionByTrId(transactionId);
         }
 
+        public static DataTable GetStatus()
+        {
+            return TransactionHeaderRepository.GetStatus();
+        }
 
+        public static void UpdateTransaction(int transactionId, string text)
+        {
+            TransactionHeaderRepository.UpdateTransaction(transactionId, "Handled");
+        }
     }
 }

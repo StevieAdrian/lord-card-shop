@@ -1,6 +1,7 @@
 ﻿using lord_card_shop.Handler;
 using lord_card_shop.Helper;
 using lord_card_shop.Model;
+using lord_card_shop.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,91 @@ namespace lord_card_shop.Controller
             }
 
             return "";
+        }
+        public static bool TryRegisterUser(
+            string username,
+            string email,
+            string dob,
+            string password,
+            string confirmPassword,
+            bool maleChecked,
+            bool femaleChecked,
+            out string errorMessage
+        )
+        {
+            errorMessage = RegisterValidateHelper.ValidateUsername(username) ??
+                           RegisterValidateHelper.ValidateEmail(email) ??
+                           RegisterValidateHelper.ValidateDOB(dob) ??
+                           RegisterValidateHelper.ValidatePassword(password) ??
+                           RegisterValidateHelper.ValidateConfirmPassword(password, confirmPassword) ??
+                           RegisterValidateHelper.ValidateGender(maleChecked, femaleChecked);
+
+            if (errorMessage != null)
+                return false;
+
+            if (UserRepository.GetUserByUsername(username) != null)
+            {
+                errorMessage = "Username already exists!";
+                return false;
+            }
+
+            try
+            {
+                DateTime dobParsed = DateTime.Parse(dob);
+
+                UserRepository.AddUser(
+                    username,
+                    email,
+                    password,
+                    maleChecked ? "Male" : "Female",
+                    dobParsed,
+                    "Customer"
+                );
+
+                return true;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static bool TryUpdateUserProfile(
+             string username,
+             string email,
+             string dob,
+             string oldPassword,
+             string newPassword,
+             string confirmPassword,
+             bool isMale,
+             bool isFemale,
+             out string errorMessage
+         )
+        {
+            bool isValid = ProfileHandler.ValidateUpdateUser(
+                username,
+                email,
+                dob,
+                oldPassword,
+                newPassword,
+                confirmPassword,
+                isMale,
+                isFemale,
+                out errorMessage
+            );
+
+            if (!isValid) return false;
+
+            ProfileHandler.UpdateUser(
+                username,
+                email,
+                dob,
+                oldPassword,
+                newPassword,
+                isMale
+            );
+
+            return true;
         }
     }
 }

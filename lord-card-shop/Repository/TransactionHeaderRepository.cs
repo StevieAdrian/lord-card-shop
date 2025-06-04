@@ -101,5 +101,21 @@ namespace lord_card_shop.Repository
                 db.SaveChanges();
             }
         }
+
+        public static DataTable GetByStatus(string status)
+        {
+            var query = from th in db.TransactionHeaders
+                        where th.Status == status
+                        select new
+                        {
+                            th.TransactionID,
+                            th.CustomerID,
+                            th.TransactionDate,
+                            th.Status,
+                            TotalPrice = th.TransactionDetails.Sum(td => (decimal?)(td.Quantity * td.Card.CardPrice)) ?? 0
+                        };
+
+            return DataTableHelper.ToDataTable(query.ToList());
+        }
     }
 }

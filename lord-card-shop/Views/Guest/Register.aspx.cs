@@ -1,4 +1,5 @@
-﻿using lord_card_shop.Handler;
+﻿using lord_card_shop.Controller;
+using lord_card_shop.Handler;
 using lord_card_shop.Model;
 using System;
 using System.Collections.Generic;
@@ -25,16 +26,16 @@ namespace lord_card_shop.Views.Guest
         protected void RegisterBtn_Click(object sender, EventArgs e)
         {
             string errorMessage;
-            bool success = RegisterHandler.RegisterUser(
-               txtUsername.Text.Trim(),
-               txtEmail.Text.Trim(),
-               txtDOB.Text.Trim(),
-               txtPassword.Text,
-               txtConfirmPassword.Text,
-               rbMale.Checked,
-               rbFemale.Checked,
-               out errorMessage
-           );
+            bool success = AuthController.TryRegisterUser(
+                txtUsername.Text.Trim(),
+                txtEmail.Text.Trim(),
+                txtDOB.Text.Trim(),
+                txtPassword.Text,
+                txtConfirmPassword.Text,
+                rbMale.Checked,
+                rbFemale.Checked,
+                out errorMessage
+            );
 
             if (!success)
             {

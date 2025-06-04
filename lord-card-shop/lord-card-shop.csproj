@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -120,11 +123,11 @@
     <Content Include="Views\Admin\ManageCard.aspx" />
     <Content Include="Views\Admin\OrderQueue.aspx" />
     <Content Include="Views\Admin\TransactionHistoryAdmin.aspx" />
+    <Content Include="Views\Admin\TransactionReport.aspx" />
     <Content Include="Views\Customer\CardDetails.aspx" />
     <Content Include="Views\Customer\Checkout.aspx" />
     <Content Include="Views\Customer\CustomerCarts.aspx" />
     <Content Include="Views\Customer\OrderCard.aspx" />
-    <Content Include="Views\Customer\SearchCard.aspx" />
     <Content Include="Views\Customer\TransactionDetail.aspx" />
     <Content Include="Views\Customer\TransactionHistory.aspx" />
     <Content Include="Views\Guest\Login.aspx" />
@@ -139,6 +142,19 @@
     <Compile Include="Controller\CartsController.cs" />
     <Compile Include="Controller\OrderCardController.cs" />
     <Compile Include="Controller\TransactionController.cs" />
+    <Compile Include="Dataset\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\TransactionDataset.Designer.cs" />
+    <Compile Include="Dataset\TransactionDataset1.Designer.cs" />
+    <Compile Include="Dataset\TransactionDataset2.Designer.cs" />
+    <Compile Include="Dataset\TransactionDataset3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Factory\CardFactory.cs" />
     <Compile Include="Factory\CartsFactory.cs" />
     <Compile Include="Factory\TransactionDetailFactory.cs" />
@@ -188,6 +204,15 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\TransactionReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Repository\CardRepository.cs" />
     <Compile Include="Repository\CartsRepository.cs" />
     <Compile Include="Repository\TransactionDetailRepository.cs" />
@@ -228,6 +253,13 @@
     <Compile Include="Views\Admin\TransactionHistoryAdmin.aspx.designer.cs">
       <DependentUpon>TransactionHistoryAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\TransactionReport.aspx.cs">
+      <DependentUpon>TransactionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\TransactionReport.aspx.designer.cs">
+      <DependentUpon>TransactionReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Customer\CardDetails.aspx.cs">
       <DependentUpon>CardDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,13 +287,6 @@
     </Compile>
     <Compile Include="Views\Customer\OrderCard.aspx.designer.cs">
       <DependentUpon>OrderCard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Customer\SearchCard.aspx.cs">
-      <DependentUpon>SearchCard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Customer\SearchCard.aspx.designer.cs">
-      <DependentUpon>SearchCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Customer\TransactionDetail.aspx.cs">
       <DependentUpon>TransactionDetail.aspx</DependentUpon>
@@ -345,6 +370,28 @@
     <Content Include="bootstrap-5.3.6-dist\js\bootstrap.esm.min.js.map" />
     <Content Include="bootstrap-5.3.6-dist\js\bootstrap.js.map" />
     <Content Include="bootstrap-5.3.6-dist\js\bootstrap.min.js.map" />
+    <Content Include="Dataset\TransactionDataset.xsc">
+      <DependentUpon>TransactionDataset.xsd</DependentUpon>
+    </Content>
+    <Content Include="Dataset\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="Dataset\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Dataset\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="Dataset\TransactionDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransactionDataset3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Dataset\TransactionDataset.xss">
+      <DependentUpon>TransactionDataset.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Website.Master" />
     <None Include="Web.Debug.config">
@@ -356,8 +403,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Report\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

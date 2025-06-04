@@ -22,17 +22,19 @@ namespace lord_card_shop.Controller
 
         public static DataTable FetchHistory(int userId)
         {
-            return TransactionHeaderRepository.GetTransactionByUserId(userId);
+            return TransactionHandler.GetByUserId(userId);
         }
+
+
 
         public static DataTable FetchDetail(int transactionId)
         {
-            return TransactionDetailRepository.GetTransactionDetailsByTransactionId(transactionId);
+            return TransactionHandler.GetTransactionDetailsById(transactionId);
         }
 
         public static DataTable GetTransactionInfo(int transactionId)
         {
-            return TransactionHeaderRepository.GetTransactionByTrId(transactionId);
+            return TransactionHandler.GetTransactionDetailsByTrId(transactionId);
         }
 
         public static DataTable FetchStatus()

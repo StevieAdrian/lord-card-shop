@@ -39,5 +39,22 @@ namespace lord_card_shop.Handler
             return TransactionHeaderRepository.GetByStatus(status);
         }
 
+
+        public static DataTable GetByUserId(int userId)
+        {
+            return TransactionHeaderRepository.GetTransactionByUserId(userId);
+        }
+
+        public static DataTable GetTransactionDetailsById(int transactionId)
+        {
+            return TransactionDetailRepository.GetTransactionDetailsByTransactionId(transactionId);
+        }
+
+        public static DataTable GetTransactionDetailsByTrId(int transactionId)
+        {
+            return TransactionHeaderRepository.GetTransactionByTrId(transactionId);
+        }
+
+
     }
 }

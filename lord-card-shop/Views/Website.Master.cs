@@ -29,14 +29,14 @@ namespace lord_card_shop.Views
             // Cek dan aktifkan link sesuai halaman
             string role = Session["role"] as string;
             ShowNavbar(role);
-            
+
             string currentPage = System.IO.Path.GetFileName(Request.Url.AbsolutePath).ToLower();
 
             if (currentPage == "home.aspx")
                 navHomeBtn.CssClass = "p-2 active";
-            else if (currentPage == "ordercard.aspx") 
+            else if (currentPage == "ordercard.aspx")
                 navOrderBtn.CssClass = "p-2 active";
-            else if (currentPage == "customercarts.aspx") 
+            else if (currentPage == "customercarts.aspx")
                 navCartBtn.CssClass = "p-2 active";
             else if (currentPage == "transactionhistory.aspx")
                 navHistoryBtn.CssClass = "p-2 active";
@@ -110,7 +110,7 @@ namespace lord_card_shop.Views
         {
             SessionHelper.ClearUserSession();
 
-            Response.Redirect("~/Views/Guest/Login.aspx"); 
+            Response.Redirect("~/Views/Guest/Login.aspx");
         }
 
         protected void navSearchBar_TextChanged(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Website.master.cs" Inherits="lord_card_shop.Views.Website" %>
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Website.master.cs" Inherits="lord_card_shop.Views.Website" %>
 
 <!DOCTYPE html>
 

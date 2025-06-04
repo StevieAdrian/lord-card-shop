@@ -48,7 +48,7 @@ namespace lord_card_shop.Views
                 navReportBtn.CssClass = "p-2 active";
             else if (currentPage == "orderqueue.aspx")
                 navQueueBtn.CssClass = "p-2 active";
-            else if (currentPage == "profile.aspx")
+             else if (currentPage == "profile.aspx")
                 navProfileBtn.CssClass = "p-2 active";
         }
 

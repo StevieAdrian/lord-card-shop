@@ -48,5 +48,10 @@ namespace lord_card_shop.Controller
         {
             return TransactionHandler.GetStatus(status);
         }
+
+        public static DataTable FetchByStatus(string status)
+        {
+            return TransactionHeaderRepository.GetByStatus(status);
+        }
     }
 }

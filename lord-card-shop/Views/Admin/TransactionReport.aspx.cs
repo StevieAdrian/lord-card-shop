@@ -21,15 +21,15 @@ namespace lord_card_shop.Views.Admin
 
             }
 
-            CrystalReport1 report = new CrystalReport1();
-            //CrystalReportViewer1.ReportSource = report;
-            DataSet1 ds = GetAllData();
+            CrystalReport5 report = new CrystalReport5();
+            DataSet2 ds = GetAllData();
             report.SetDataSource(ds);
+            CrystalReportViewer2.ReportSource = report;
         }
 
-        public DataSet1 GetAllData()
+        public DataSet2 GetAllData()
         {
-            DataSet1 dataset = new DataSet1();
+            DataSet2 dataset = new DataSet2();
             var headertable = dataset.TransactionHeader;
             var detailtable = dataset.TransactionDetail;
 
@@ -39,7 +39,7 @@ namespace lord_card_shop.Views.Admin
             foreach (TransactionHeader mst in transaction)
             {
                 var hrow = headertable.NewRow();
-                hrow["TransactionId"] = mst.TransactionID;
+                hrow["TransactionId"] = mst.TransactionID.ToString();
                 hrow["TransactionDate"] = mst.TransactionDate;
                 hrow["CustomerId"] = mst.CustomerID;
                 hrow["Status"] = mst.Status;
@@ -48,7 +48,7 @@ namespace lord_card_shop.Views.Admin
                 foreach (TransactionDetail mstd in mst.TransactionDetails)
                 {
                     var drow = detailtable.NewRow();
-                    drow["TransactionId"] = mstd.TransactionID;
+                    drow["TransactionId"] = mstd.TransactionID.ToString();
                     drow["CardID"] = mstd.CardID;
                     drow["Quantity"] = mstd.Quantity;
                     detailtable.Rows.Add(drow);

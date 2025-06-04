@@ -10,9 +10,10 @@
 
 //#pragma warning disable 1591
 
-//namespace lord_card_shop.Dataset {
-    
-    
+//namespace lord_card_shop.Dataset
+//{
+
+
 //    /// <summary>
 //    ///Represents a strongly typed in-memory cache of data.
 //    ///</summary>
@@ -22,19 +23,21 @@
 //    [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
 //    [global::System.Xml.Serialization.XmlRootAttribute("TransactionDataset")]
 //    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-//    public partial class TransactionDataset : global::System.Data.DataSet {
-        
+//    public partial class TransactionDataset : global::System.Data.DataSet
+//    {
+
 //        private TransactionHeaderDataTable tableTransactionHeader;
-        
+
 //        private TransactionDetailDataTable tableTransactionDetail;
-        
+
 //        private global::System.Data.DataRelation relationTransactionHeader_TransactionDetail;
-        
+
 //        private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        public TransactionDataset() {
+//        public TransactionDataset()
+//        {
 //            this.BeginInit();
 //            this.InitClass();
 //            global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -42,12 +45,14 @@
 //            base.Relations.CollectionChanged += schemaChangedHandler;
 //            this.EndInit();
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        protected TransactionDataset(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-//                base(info, context, false) {
-//            if ((this.IsBinarySerialized(info, context) == true)) {
+//        protected TransactionDataset(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) :
+//                base(info, context, false)
+//        {
+//            if ((this.IsBinarySerialized(info, context) == true))
+//            {
 //                this.InitVars(false);
 //                global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
 //                this.Tables.CollectionChanged += schemaChangedHandler1;
@@ -55,13 +60,16 @@
 //                return;
 //            }
 //            string strSchema = ((string)(info.GetValue("XmlSchema", typeof(string))));
-//            if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
+//            if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema))
+//            {
 //                global::System.Data.DataSet ds = new global::System.Data.DataSet();
 //                ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-//                if ((ds.Tables["TransactionHeader"] != null)) {
+//                if ((ds.Tables["TransactionHeader"] != null))
+//                {
 //                    base.Tables.Add(new TransactionHeaderDataTable(ds.Tables["TransactionHeader"]));
 //                }
-//                if ((ds.Tables["TransactionDetail"] != null)) {
+//                if ((ds.Tables["TransactionDetail"] != null))
+//                {
 //                    base.Tables.Add(new TransactionDetailDataTable(ds.Tables["TransactionDetail"]));
 //                }
 //                this.DataSetName = ds.DataSetName;
@@ -73,7 +81,8 @@
 //                this.Merge(ds, false, global::System.Data.MissingSchemaAction.Add);
 //                this.InitVars();
 //            }
-//            else {
+//            else
+//            {
 //                this.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
 //            }
 //            this.GetSerializationData(info, context);
@@ -81,98 +90,117 @@
 //            base.Tables.CollectionChanged += schemaChangedHandler;
 //            this.Relations.CollectionChanged += schemaChangedHandler;
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //        [global::System.ComponentModel.Browsable(false)]
 //        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-//        public TransactionHeaderDataTable TransactionHeader {
-//            get {
+//        public TransactionHeaderDataTable TransactionHeader
+//        {
+//            get
+//            {
 //                return this.tableTransactionHeader;
 //            }
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //        [global::System.ComponentModel.Browsable(false)]
 //        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-//        public TransactionDetailDataTable TransactionDetail {
-//            get {
+//        public TransactionDetailDataTable TransactionDetail
+//        {
+//            get
+//            {
 //                return this.tableTransactionDetail;
 //            }
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //        [global::System.ComponentModel.BrowsableAttribute(true)]
 //        [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
-//        public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
-//            get {
+//        public override global::System.Data.SchemaSerializationMode SchemaSerializationMode
+//        {
+//            get
+//            {
 //                return this._schemaSerializationMode;
 //            }
-//            set {
+//            set
+//            {
 //                this._schemaSerializationMode = value;
 //            }
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //        [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-//        public new global::System.Data.DataTableCollection Tables {
-//            get {
+//        public new global::System.Data.DataTableCollection Tables
+//        {
+//            get
+//            {
 //                return base.Tables;
 //            }
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //        [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-//        public new global::System.Data.DataRelationCollection Relations {
-//            get {
+//        public new global::System.Data.DataRelationCollection Relations
+//        {
+//            get
+//            {
 //                return base.Relations;
 //            }
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        protected override void InitializeDerivedDataSet() {
+//        protected override void InitializeDerivedDataSet()
+//        {
 //            this.BeginInit();
 //            this.InitClass();
 //            this.EndInit();
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        public override global::System.Data.DataSet Clone() {
+//        public override global::System.Data.DataSet Clone()
+//        {
 //            TransactionDataset cln = ((TransactionDataset)(base.Clone()));
 //            cln.InitVars();
 //            cln.SchemaSerializationMode = this.SchemaSerializationMode;
 //            return cln;
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        protected override bool ShouldSerializeTables() {
+//        protected override bool ShouldSerializeTables()
+//        {
 //            return false;
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        protected override bool ShouldSerializeRelations() {
+//        protected override bool ShouldSerializeRelations()
+//        {
 //            return false;
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        protected override void ReadXmlSerializable(global::System.Xml.XmlReader reader) {
-//            if ((this.DetermineSchemaSerializationMode(reader) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
+//        protected override void ReadXmlSerializable(global::System.Xml.XmlReader reader)
+//        {
+//            if ((this.DetermineSchemaSerializationMode(reader) == global::System.Data.SchemaSerializationMode.IncludeSchema))
+//            {
 //                this.Reset();
 //                global::System.Data.DataSet ds = new global::System.Data.DataSet();
 //                ds.ReadXml(reader);
-//                if ((ds.Tables["TransactionHeader"] != null)) {
+//                if ((ds.Tables["TransactionHeader"] != null))
+//                {
 //                    base.Tables.Add(new TransactionHeaderDataTable(ds.Tables["TransactionHeader"]));
 //                }
-//                if ((ds.Tables["TransactionDetail"] != null)) {
+//                if ((ds.Tables["TransactionDetail"] != null))
+//                {
 //                    base.Tables.Add(new TransactionDetailDataTable(ds.Tables["TransactionDetail"]));
 //                }
 //                this.DataSetName = ds.DataSetName;
@@ -184,48 +212,57 @@
 //                this.Merge(ds, false, global::System.Data.MissingSchemaAction.Add);
 //                this.InitVars();
 //            }
-//            else {
+//            else
+//            {
 //                this.ReadXml(reader);
 //                this.InitVars();
 //            }
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        protected override global::System.Xml.Schema.XmlSchema GetSchemaSerializable() {
+//        protected override global::System.Xml.Schema.XmlSchema GetSchemaSerializable()
+//        {
 //            global::System.IO.MemoryStream stream = new global::System.IO.MemoryStream();
 //            this.WriteXmlSchema(new global::System.Xml.XmlTextWriter(stream, null));
 //            stream.Position = 0;
 //            return global::System.Xml.Schema.XmlSchema.Read(new global::System.Xml.XmlTextReader(stream), null);
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        internal void InitVars() {
+//        internal void InitVars()
+//        {
 //            this.InitVars(true);
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        internal void InitVars(bool initTable) {
+//        internal void InitVars(bool initTable)
+//        {
 //            this.tableTransactionHeader = ((TransactionHeaderDataTable)(base.Tables["TransactionHeader"]));
-//            if ((initTable == true)) {
-//                if ((this.tableTransactionHeader != null)) {
+//            if ((initTable == true))
+//            {
+//                if ((this.tableTransactionHeader != null))
+//                {
 //                    this.tableTransactionHeader.InitVars();
 //                }
 //            }
 //            this.tableTransactionDetail = ((TransactionDetailDataTable)(base.Tables["TransactionDetail"]));
-//            if ((initTable == true)) {
-//                if ((this.tableTransactionDetail != null)) {
+//            if ((initTable == true))
+//            {
+//                if ((this.tableTransactionDetail != null))
+//                {
 //                    this.tableTransactionDetail.InitVars();
 //                }
 //            }
 //            this.relationTransactionHeader_TransactionDetail = this.Relations["TransactionHeader_TransactionDetail"];
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        private void InitClass() {
+//        private void InitClass()
+//        {
 //            this.DataSetName = "TransactionDataset";
 //            this.Prefix = "";
 //            this.Namespace = "http://tempuri.org/TransactionDataset.xsd";
@@ -240,30 +277,35 @@
 //                        this.tableTransactionDetail.TransactionIDColumn}, false);
 //            this.Relations.Add(this.relationTransactionHeader_TransactionDetail);
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        private bool ShouldSerializeTransactionHeader() {
+//        private bool ShouldSerializeTransactionHeader()
+//        {
 //            return false;
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        private bool ShouldSerializeTransactionDetail() {
+//        private bool ShouldSerializeTransactionDetail()
+//        {
 //            return false;
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
-//            if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
+//        private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e)
+//        {
+//            if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove))
+//            {
 //                this.InitVars();
 //            }
 //        }
-        
+
 //        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+//        public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs)
+//        {
 //            TransactionDataset ds = new TransactionDataset();
 //            global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
 //            global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
@@ -272,34 +314,43 @@
 //            sequence.Items.Add(any);
 //            type.Particle = sequence;
 //            global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-//            if (xs.Contains(dsSchema.TargetNamespace)) {
+//            if (xs.Contains(dsSchema.TargetNamespace))
+//            {
 //                global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
 //                global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-//                try {
+//                try
+//                {
 //                    global::System.Xml.Schema.XmlSchema schema = null;
 //                    dsSchema.Write(s1);
-//                    for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+//                    for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext();)
+//                    {
 //                        schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
 //                        s2.SetLength(0);
 //                        schema.Write(s2);
-//                        if ((s1.Length == s2.Length)) {
+//                        if ((s1.Length == s2.Length))
+//                        {
 //                            s1.Position = 0;
 //                            s2.Position = 0;
-//                            for (; ((s1.Position != s1.Length) 
-//                                        && (s1.ReadByte() == s2.ReadByte())); ) {
+//                            for (; ((s1.Position != s1.Length)
+//                                        && (s1.ReadByte() == s2.ReadByte()));)
+//                            {
 //                                ;
 //                            }
-//                            if ((s1.Position == s1.Length)) {
+//                            if ((s1.Position == s1.Length))
+//                            {
 //                                return type;
 //                            }
 //                        }
 //                    }
 //                }
-//                finally {
-//                    if ((s1 != null)) {
+//                finally
+//                {
+//                    if ((s1 != null))
+//                    {
 //                        s1.Close();
 //                    }
-//                    if ((s2 != null)) {
+//                    if ((s2 != null))
+//                    {
 //                        s2.Close();
 //                    }
 //                }
@@ -307,131 +358,152 @@
 //            xs.Add(dsSchema);
 //            return type;
 //        }
-        
+
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //        public delegate void TransactionHeaderRowChangeEventHandler(object sender, TransactionHeaderRowChangeEvent e);
-        
+
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //        public delegate void TransactionDetailRowChangeEventHandler(object sender, TransactionDetailRowChangeEvent e);
-        
+
 //        /// <summary>
 //        ///Represents the strongly named DataTable class.
 //        ///</summary>
 //        [global::System.Serializable()]
 //        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-//        public partial class TransactionHeaderDataTable : global::System.Data.TypedTableBase<TransactionHeaderRow> {
-            
+//        public partial class TransactionHeaderDataTable : global::System.Data.TypedTableBase<TransactionHeaderRow>
+//        {
+
 //            private global::System.Data.DataColumn columnTransactionID;
-            
+
 //            private global::System.Data.DataColumn columnTransactionDate;
-            
+
 //            private global::System.Data.DataColumn columnCustomerID;
-            
+
 //            private global::System.Data.DataColumn columnStatus;
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionHeaderDataTable() {
+//            public TransactionHeaderDataTable()
+//            {
 //                this.TableName = "TransactionHeader";
 //                this.BeginInit();
 //                this.InitClass();
 //                this.EndInit();
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            internal TransactionHeaderDataTable(global::System.Data.DataTable table) {
+//            internal TransactionHeaderDataTable(global::System.Data.DataTable table)
+//            {
 //                this.TableName = table.TableName;
-//                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+//                if ((table.CaseSensitive != table.DataSet.CaseSensitive))
+//                {
 //                    this.CaseSensitive = table.CaseSensitive;
 //                }
-//                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+//                if ((table.Locale.ToString() != table.DataSet.Locale.ToString()))
+//                {
 //                    this.Locale = table.Locale;
 //                }
-//                if ((table.Namespace != table.DataSet.Namespace)) {
+//                if ((table.Namespace != table.DataSet.Namespace))
+//                {
 //                    this.Namespace = table.Namespace;
 //                }
 //                this.Prefix = table.Prefix;
 //                this.MinimumCapacity = table.MinimumCapacity;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected TransactionHeaderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-//                    base(info, context) {
+//            protected TransactionHeaderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) :
+//                    base(info, context)
+//            {
 //                this.InitVars();
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataColumn TransactionIDColumn {
-//                get {
+//            public global::System.Data.DataColumn TransactionIDColumn
+//            {
+//                get
+//                {
 //                    return this.columnTransactionID;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataColumn TransactionDateColumn {
-//                get {
+//            public global::System.Data.DataColumn TransactionDateColumn
+//            {
+//                get
+//                {
 //                    return this.columnTransactionDate;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataColumn CustomerIDColumn {
-//                get {
+//            public global::System.Data.DataColumn CustomerIDColumn
+//            {
+//                get
+//                {
 //                    return this.columnCustomerID;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataColumn StatusColumn {
-//                get {
+//            public global::System.Data.DataColumn StatusColumn
+//            {
+//                get
+//                {
 //                    return this.columnStatus;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            [global::System.ComponentModel.Browsable(false)]
-//            public int Count {
-//                get {
+//            public int Count
+//            {
+//                get
+//                {
 //                    return this.Rows.Count;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionHeaderRow this[int index] {
-//                get {
+//            public TransactionHeaderRow this[int index]
+//            {
+//                get
+//                {
 //                    return ((TransactionHeaderRow)(this.Rows[index]));
 //                }
 //            }
-            
+
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            public event TransactionHeaderRowChangeEventHandler TransactionHeaderRowChanging;
-            
+
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            public event TransactionHeaderRowChangeEventHandler TransactionHeaderRowChanged;
-            
+
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            public event TransactionHeaderRowChangeEventHandler TransactionHeaderRowDeleting;
-            
+
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            public event TransactionHeaderRowChangeEventHandler TransactionHeaderRowDeleted;
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void AddTransactionHeaderRow(TransactionHeaderRow row) {
+//            public void AddTransactionHeaderRow(TransactionHeaderRow row)
+//            {
 //                this.Rows.Add(row);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionHeaderRow AddTransactionHeaderRow(string TransactionID, string TransactionDate, string CustomerID, string Status) {
+//            public TransactionHeaderRow AddTransactionHeaderRow(string TransactionID, string TransactionDate, string CustomerID, string Status)
+//            {
 //                TransactionHeaderRow rowTransactionHeaderRow = ((TransactionHeaderRow)(this.NewRow()));
 //                object[] columnValuesArray = new object[] {
 //                        TransactionID,
@@ -442,33 +514,37 @@
 //                this.Rows.Add(rowTransactionHeaderRow);
 //                return rowTransactionHeaderRow;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public override global::System.Data.DataTable Clone() {
+//            public override global::System.Data.DataTable Clone()
+//            {
 //                TransactionHeaderDataTable cln = ((TransactionHeaderDataTable)(base.Clone()));
 //                cln.InitVars();
 //                return cln;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override global::System.Data.DataTable CreateInstance() {
+//            protected override global::System.Data.DataTable CreateInstance()
+//            {
 //                return new TransactionHeaderDataTable();
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            internal void InitVars() {
+//            internal void InitVars()
+//            {
 //                this.columnTransactionID = base.Columns["TransactionID"];
 //                this.columnTransactionDate = base.Columns["TransactionDate"];
 //                this.columnCustomerID = base.Columns["CustomerID"];
 //                this.columnStatus = base.Columns["Status"];
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            private void InitClass() {
+//            private void InitClass()
+//            {
 //                this.columnTransactionID = new global::System.Data.DataColumn("TransactionID", typeof(string), null, global::System.Data.MappingType.Element);
 //                base.Columns.Add(this.columnTransactionID);
 //                this.columnTransactionDate = new global::System.Data.DataColumn("TransactionDate", typeof(string), null, global::System.Data.MappingType.Element);
@@ -478,70 +554,83 @@
 //                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
 //                base.Columns.Add(this.columnStatus);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionHeaderRow NewTransactionHeaderRow() {
+//            public TransactionHeaderRow NewTransactionHeaderRow()
+//            {
 //                return ((TransactionHeaderRow)(this.NewRow()));
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+//            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder)
+//            {
 //                return new TransactionHeaderRow(builder);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override global::System.Type GetRowType() {
+//            protected override global::System.Type GetRowType()
+//            {
 //                return typeof(TransactionHeaderRow);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+//            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e)
+//            {
 //                base.OnRowChanged(e);
-//                if ((this.TransactionHeaderRowChanged != null)) {
+//                if ((this.TransactionHeaderRowChanged != null))
+//                {
 //                    this.TransactionHeaderRowChanged(this, new TransactionHeaderRowChangeEvent(((TransactionHeaderRow)(e.Row)), e.Action));
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+//            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e)
+//            {
 //                base.OnRowChanging(e);
-//                if ((this.TransactionHeaderRowChanging != null)) {
+//                if ((this.TransactionHeaderRowChanging != null))
+//                {
 //                    this.TransactionHeaderRowChanging(this, new TransactionHeaderRowChangeEvent(((TransactionHeaderRow)(e.Row)), e.Action));
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+//            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e)
+//            {
 //                base.OnRowDeleted(e);
-//                if ((this.TransactionHeaderRowDeleted != null)) {
+//                if ((this.TransactionHeaderRowDeleted != null))
+//                {
 //                    this.TransactionHeaderRowDeleted(this, new TransactionHeaderRowChangeEvent(((TransactionHeaderRow)(e.Row)), e.Action));
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+//            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e)
+//            {
 //                base.OnRowDeleting(e);
-//                if ((this.TransactionHeaderRowDeleting != null)) {
+//                if ((this.TransactionHeaderRowDeleting != null))
+//                {
 //                    this.TransactionHeaderRowDeleting(this, new TransactionHeaderRowChangeEvent(((TransactionHeaderRow)(e.Row)), e.Action));
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void RemoveTransactionHeaderRow(TransactionHeaderRow row) {
+//            public void RemoveTransactionHeaderRow(TransactionHeaderRow row)
+//            {
 //                this.Rows.Remove(row);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+//            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs)
+//            {
 //                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
 //                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
 //                TransactionDataset ds = new TransactionDataset();
@@ -566,34 +655,43 @@
 //                type.Attributes.Add(attribute2);
 //                type.Particle = sequence;
 //                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-//                if (xs.Contains(dsSchema.TargetNamespace)) {
+//                if (xs.Contains(dsSchema.TargetNamespace))
+//                {
 //                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
 //                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-//                    try {
+//                    try
+//                    {
 //                        global::System.Xml.Schema.XmlSchema schema = null;
 //                        dsSchema.Write(s1);
-//                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+//                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext();)
+//                        {
 //                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
 //                            s2.SetLength(0);
 //                            schema.Write(s2);
-//                            if ((s1.Length == s2.Length)) {
+//                            if ((s1.Length == s2.Length))
+//                            {
 //                                s1.Position = 0;
 //                                s2.Position = 0;
-//                                for (; ((s1.Position != s1.Length) 
-//                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+//                                for (; ((s1.Position != s1.Length)
+//                                            && (s1.ReadByte() == s2.ReadByte()));)
+//                                {
 //                                    ;
 //                                }
-//                                if ((s1.Position == s1.Length)) {
+//                                if ((s1.Position == s1.Length))
+//                                {
 //                                    return type;
 //                                }
 //                            }
 //                        }
 //                    }
-//                    finally {
-//                        if ((s1 != null)) {
+//                    finally
+//                    {
+//                        if ((s1 != null))
+//                        {
 //                            s1.Close();
 //                        }
-//                        if ((s2 != null)) {
+//                        if ((s2 != null))
+//                        {
 //                            s2.Close();
 //                        }
 //                    }
@@ -602,135 +700,158 @@
 //                return type;
 //            }
 //        }
-        
+
 //        /// <summary>
 //        ///Represents the strongly named DataTable class.
 //        ///</summary>
 //        [global::System.Serializable()]
 //        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-//        public partial class TransactionDetailDataTable : global::System.Data.TypedTableBase<TransactionDetailRow> {
-            
+//        public partial class TransactionDetailDataTable : global::System.Data.TypedTableBase<TransactionDetailRow>
+//        {
+
 //            private global::System.Data.DataColumn columnTransactionID;
-            
+
 //            private global::System.Data.DataColumn columnCardID;
-            
+
 //            private global::System.Data.DataColumn columnQuantity;
-            
+
 //            private global::System.Data.DataColumn columnCardPrice;
-            
+
 //            private global::System.Data.DataColumn columnTotalPrice;
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionDetailDataTable() {
+//            public TransactionDetailDataTable()
+//            {
 //                this.TableName = "TransactionDetail";
 //                this.BeginInit();
 //                this.InitClass();
 //                this.EndInit();
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            internal TransactionDetailDataTable(global::System.Data.DataTable table) {
+//            internal TransactionDetailDataTable(global::System.Data.DataTable table)
+//            {
 //                this.TableName = table.TableName;
-//                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+//                if ((table.CaseSensitive != table.DataSet.CaseSensitive))
+//                {
 //                    this.CaseSensitive = table.CaseSensitive;
 //                }
-//                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+//                if ((table.Locale.ToString() != table.DataSet.Locale.ToString()))
+//                {
 //                    this.Locale = table.Locale;
 //                }
-//                if ((table.Namespace != table.DataSet.Namespace)) {
+//                if ((table.Namespace != table.DataSet.Namespace))
+//                {
 //                    this.Namespace = table.Namespace;
 //                }
 //                this.Prefix = table.Prefix;
 //                this.MinimumCapacity = table.MinimumCapacity;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected TransactionDetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-//                    base(info, context) {
+//            protected TransactionDetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) :
+//                    base(info, context)
+//            {
 //                this.InitVars();
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataColumn TransactionIDColumn {
-//                get {
+//            public global::System.Data.DataColumn TransactionIDColumn
+//            {
+//                get
+//                {
 //                    return this.columnTransactionID;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataColumn CardIDColumn {
-//                get {
+//            public global::System.Data.DataColumn CardIDColumn
+//            {
+//                get
+//                {
 //                    return this.columnCardID;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataColumn QuantityColumn {
-//                get {
+//            public global::System.Data.DataColumn QuantityColumn
+//            {
+//                get
+//                {
 //                    return this.columnQuantity;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataColumn CardPriceColumn {
-//                get {
+//            public global::System.Data.DataColumn CardPriceColumn
+//            {
+//                get
+//                {
 //                    return this.columnCardPrice;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataColumn TotalPriceColumn {
-//                get {
+//            public global::System.Data.DataColumn TotalPriceColumn
+//            {
+//                get
+//                {
 //                    return this.columnTotalPrice;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            [global::System.ComponentModel.Browsable(false)]
-//            public int Count {
-//                get {
+//            public int Count
+//            {
+//                get
+//                {
 //                    return this.Rows.Count;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionDetailRow this[int index] {
-//                get {
+//            public TransactionDetailRow this[int index]
+//            {
+//                get
+//                {
 //                    return ((TransactionDetailRow)(this.Rows[index]));
 //                }
 //            }
-            
+
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            public event TransactionDetailRowChangeEventHandler TransactionDetailRowChanging;
-            
+
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            public event TransactionDetailRowChangeEventHandler TransactionDetailRowChanged;
-            
+
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            public event TransactionDetailRowChangeEventHandler TransactionDetailRowDeleting;
-            
+
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
 //            public event TransactionDetailRowChangeEventHandler TransactionDetailRowDeleted;
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void AddTransactionDetailRow(TransactionDetailRow row) {
+//            public void AddTransactionDetailRow(TransactionDetailRow row)
+//            {
 //                this.Rows.Add(row);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionDetailRow AddTransactionDetailRow(TransactionHeaderRow parentTransactionHeaderRowByTransactionHeader_TransactionDetail, string CardID, string Quantity, string CardPrice, string TotalPrice) {
+//            public TransactionDetailRow AddTransactionDetailRow(TransactionHeaderRow parentTransactionHeaderRowByTransactionHeader_TransactionDetail, string CardID, string Quantity, string CardPrice, string TotalPrice)
+//            {
 //                TransactionDetailRow rowTransactionDetailRow = ((TransactionDetailRow)(this.NewRow()));
 //                object[] columnValuesArray = new object[] {
 //                        null,
@@ -738,41 +859,46 @@
 //                        Quantity,
 //                        CardPrice,
 //                        TotalPrice};
-//                if ((parentTransactionHeaderRowByTransactionHeader_TransactionDetail != null)) {
+//                if ((parentTransactionHeaderRowByTransactionHeader_TransactionDetail != null))
+//                {
 //                    columnValuesArray[0] = parentTransactionHeaderRowByTransactionHeader_TransactionDetail[0];
 //                }
 //                rowTransactionDetailRow.ItemArray = columnValuesArray;
 //                this.Rows.Add(rowTransactionDetailRow);
 //                return rowTransactionDetailRow;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public override global::System.Data.DataTable Clone() {
+//            public override global::System.Data.DataTable Clone()
+//            {
 //                TransactionDetailDataTable cln = ((TransactionDetailDataTable)(base.Clone()));
 //                cln.InitVars();
 //                return cln;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override global::System.Data.DataTable CreateInstance() {
+//            protected override global::System.Data.DataTable CreateInstance()
+//            {
 //                return new TransactionDetailDataTable();
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            internal void InitVars() {
+//            internal void InitVars()
+//            {
 //                this.columnTransactionID = base.Columns["TransactionID"];
 //                this.columnCardID = base.Columns["CardID"];
 //                this.columnQuantity = base.Columns["Quantity"];
 //                this.columnCardPrice = base.Columns["CardPrice"];
 //                this.columnTotalPrice = base.Columns["TotalPrice"];
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            private void InitClass() {
+//            private void InitClass()
+//            {
 //                this.columnTransactionID = new global::System.Data.DataColumn("TransactionID", typeof(string), null, global::System.Data.MappingType.Element);
 //                base.Columns.Add(this.columnTransactionID);
 //                this.columnCardID = new global::System.Data.DataColumn("CardID", typeof(string), null, global::System.Data.MappingType.Element);
@@ -784,70 +910,83 @@
 //                this.columnTotalPrice = new global::System.Data.DataColumn("TotalPrice", typeof(string), null, global::System.Data.MappingType.Element);
 //                base.Columns.Add(this.columnTotalPrice);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionDetailRow NewTransactionDetailRow() {
+//            public TransactionDetailRow NewTransactionDetailRow()
+//            {
 //                return ((TransactionDetailRow)(this.NewRow()));
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+//            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder)
+//            {
 //                return new TransactionDetailRow(builder);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override global::System.Type GetRowType() {
+//            protected override global::System.Type GetRowType()
+//            {
 //                return typeof(TransactionDetailRow);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+//            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e)
+//            {
 //                base.OnRowChanged(e);
-//                if ((this.TransactionDetailRowChanged != null)) {
+//                if ((this.TransactionDetailRowChanged != null))
+//                {
 //                    this.TransactionDetailRowChanged(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+//            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e)
+//            {
 //                base.OnRowChanging(e);
-//                if ((this.TransactionDetailRowChanging != null)) {
+//                if ((this.TransactionDetailRowChanging != null))
+//                {
 //                    this.TransactionDetailRowChanging(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+//            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e)
+//            {
 //                base.OnRowDeleted(e);
-//                if ((this.TransactionDetailRowDeleted != null)) {
+//                if ((this.TransactionDetailRowDeleted != null))
+//                {
 //                    this.TransactionDetailRowDeleted(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+//            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e)
+//            {
 //                base.OnRowDeleting(e);
-//                if ((this.TransactionDetailRowDeleting != null)) {
+//                if ((this.TransactionDetailRowDeleting != null))
+//                {
 //                    this.TransactionDetailRowDeleting(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void RemoveTransactionDetailRow(TransactionDetailRow row) {
+//            public void RemoveTransactionDetailRow(TransactionDetailRow row)
+//            {
 //                this.Rows.Remove(row);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+//            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs)
+//            {
 //                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
 //                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
 //                TransactionDataset ds = new TransactionDataset();
@@ -872,34 +1011,43 @@
 //                type.Attributes.Add(attribute2);
 //                type.Particle = sequence;
 //                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-//                if (xs.Contains(dsSchema.TargetNamespace)) {
+//                if (xs.Contains(dsSchema.TargetNamespace))
+//                {
 //                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
 //                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-//                    try {
+//                    try
+//                    {
 //                        global::System.Xml.Schema.XmlSchema schema = null;
 //                        dsSchema.Write(s1);
-//                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+//                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext();)
+//                        {
 //                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
 //                            s2.SetLength(0);
 //                            schema.Write(s2);
-//                            if ((s1.Length == s2.Length)) {
+//                            if ((s1.Length == s2.Length))
+//                            {
 //                                s1.Position = 0;
 //                                s2.Position = 0;
-//                                for (; ((s1.Position != s1.Length) 
-//                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+//                                for (; ((s1.Position != s1.Length)
+//                                            && (s1.ReadByte() == s2.ReadByte()));)
+//                                {
 //                                    ;
 //                                }
-//                                if ((s1.Position == s1.Length)) {
+//                                if ((s1.Position == s1.Length))
+//                                {
 //                                    return type;
 //                                }
 //                            }
 //                        }
 //                    }
-//                    finally {
-//                        if ((s1 != null)) {
+//                    finally
+//                    {
+//                        if ((s1 != null))
+//                        {
 //                            s1.Close();
 //                        }
-//                        if ((s2 != null)) {
+//                        if ((s2 != null))
+//                        {
 //                            s2.Close();
 //                        }
 //                    }
@@ -908,374 +1056,459 @@
 //                return type;
 //            }
 //        }
-        
+
 //        /// <summary>
 //        ///Represents strongly named DataRow class.
 //        ///</summary>
-//        public partial class TransactionHeaderRow : global::System.Data.DataRow {
-            
+//        public partial class TransactionHeaderRow : global::System.Data.DataRow
+//        {
+
 //            private TransactionHeaderDataTable tableTransactionHeader;
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            internal TransactionHeaderRow(global::System.Data.DataRowBuilder rb) : 
-//                    base(rb) {
+//            internal TransactionHeaderRow(global::System.Data.DataRowBuilder rb) :
+//                    base(rb)
+//            {
 //                this.tableTransactionHeader = ((TransactionHeaderDataTable)(this.Table));
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public string TransactionID {
-//                get {
-//                    try {
+//            public string TransactionID
+//            {
+//                get
+//                {
+//                    try
+//                    {
 //                        return ((string)(this[this.tableTransactionHeader.TransactionIDColumn]));
 //                    }
-//                    catch (global::System.InvalidCastException e) {
+//                    catch (global::System.InvalidCastException e)
+//                    {
 //                        throw new global::System.Data.StrongTypingException("The value for column \'TransactionID\' in table \'TransactionHeader\' is DBNull.", e);
 //                    }
 //                }
-//                set {
+//                set
+//                {
 //                    this[this.tableTransactionHeader.TransactionIDColumn] = value;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public string TransactionDate {
-//                get {
-//                    try {
+//            public string TransactionDate
+//            {
+//                get
+//                {
+//                    try
+//                    {
 //                        return ((string)(this[this.tableTransactionHeader.TransactionDateColumn]));
 //                    }
-//                    catch (global::System.InvalidCastException e) {
+//                    catch (global::System.InvalidCastException e)
+//                    {
 //                        throw new global::System.Data.StrongTypingException("The value for column \'TransactionDate\' in table \'TransactionHeader\' is DBNull.", e);
 //                    }
 //                }
-//                set {
+//                set
+//                {
 //                    this[this.tableTransactionHeader.TransactionDateColumn] = value;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public string CustomerID {
-//                get {
-//                    try {
+//            public string CustomerID
+//            {
+//                get
+//                {
+//                    try
+//                    {
 //                        return ((string)(this[this.tableTransactionHeader.CustomerIDColumn]));
 //                    }
-//                    catch (global::System.InvalidCastException e) {
+//                    catch (global::System.InvalidCastException e)
+//                    {
 //                        throw new global::System.Data.StrongTypingException("The value for column \'CustomerID\' in table \'TransactionHeader\' is DBNull.", e);
 //                    }
 //                }
-//                set {
+//                set
+//                {
 //                    this[this.tableTransactionHeader.CustomerIDColumn] = value;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public string Status {
-//                get {
-//                    try {
+//            public string Status
+//            {
+//                get
+//                {
+//                    try
+//                    {
 //                        return ((string)(this[this.tableTransactionHeader.StatusColumn]));
 //                    }
-//                    catch (global::System.InvalidCastException e) {
+//                    catch (global::System.InvalidCastException e)
+//                    {
 //                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'TransactionHeader\' is DBNull.", e);
 //                    }
 //                }
-//                set {
+//                set
+//                {
 //                    this[this.tableTransactionHeader.StatusColumn] = value;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public bool IsTransactionIDNull() {
+//            public bool IsTransactionIDNull()
+//            {
 //                return this.IsNull(this.tableTransactionHeader.TransactionIDColumn);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void SetTransactionIDNull() {
+//            public void SetTransactionIDNull()
+//            {
 //                this[this.tableTransactionHeader.TransactionIDColumn] = global::System.Convert.DBNull;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public bool IsTransactionDateNull() {
+//            public bool IsTransactionDateNull()
+//            {
 //                return this.IsNull(this.tableTransactionHeader.TransactionDateColumn);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void SetTransactionDateNull() {
+//            public void SetTransactionDateNull()
+//            {
 //                this[this.tableTransactionHeader.TransactionDateColumn] = global::System.Convert.DBNull;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public bool IsCustomerIDNull() {
+//            public bool IsCustomerIDNull()
+//            {
 //                return this.IsNull(this.tableTransactionHeader.CustomerIDColumn);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void SetCustomerIDNull() {
+//            public void SetCustomerIDNull()
+//            {
 //                this[this.tableTransactionHeader.CustomerIDColumn] = global::System.Convert.DBNull;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public bool IsStatusNull() {
+//            public bool IsStatusNull()
+//            {
 //                return this.IsNull(this.tableTransactionHeader.StatusColumn);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void SetStatusNull() {
+//            public void SetStatusNull()
+//            {
 //                this[this.tableTransactionHeader.StatusColumn] = global::System.Convert.DBNull;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionDetailRow[] GetTransactionDetailRows() {
-//                if ((this.Table.ChildRelations["TransactionHeader_TransactionDetail"] == null)) {
+//            public TransactionDetailRow[] GetTransactionDetailRows()
+//            {
+//                if ((this.Table.ChildRelations["TransactionHeader_TransactionDetail"] == null))
+//                {
 //                    return new TransactionDetailRow[0];
 //                }
-//                else {
+//                else
+//                {
 //                    return ((TransactionDetailRow[])(base.GetChildRows(this.Table.ChildRelations["TransactionHeader_TransactionDetail"])));
 //                }
 //            }
 //        }
-        
+
 //        /// <summary>
 //        ///Represents strongly named DataRow class.
 //        ///</summary>
-//        public partial class TransactionDetailRow : global::System.Data.DataRow {
-            
+//        public partial class TransactionDetailRow : global::System.Data.DataRow
+//        {
+
 //            private TransactionDetailDataTable tableTransactionDetail;
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            internal TransactionDetailRow(global::System.Data.DataRowBuilder rb) : 
-//                    base(rb) {
+//            internal TransactionDetailRow(global::System.Data.DataRowBuilder rb) :
+//                    base(rb)
+//            {
 //                this.tableTransactionDetail = ((TransactionDetailDataTable)(this.Table));
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public string TransactionID {
-//                get {
-//                    try {
+//            public string TransactionID
+//            {
+//                get
+//                {
+//                    try
+//                    {
 //                        return ((string)(this[this.tableTransactionDetail.TransactionIDColumn]));
 //                    }
-//                    catch (global::System.InvalidCastException e) {
+//                    catch (global::System.InvalidCastException e)
+//                    {
 //                        throw new global::System.Data.StrongTypingException("The value for column \'TransactionID\' in table \'TransactionDetail\' is DBNull.", e);
 //                    }
 //                }
-//                set {
+//                set
+//                {
 //                    this[this.tableTransactionDetail.TransactionIDColumn] = value;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public string CardID {
-//                get {
-//                    try {
+//            public string CardID
+//            {
+//                get
+//                {
+//                    try
+//                    {
 //                        return ((string)(this[this.tableTransactionDetail.CardIDColumn]));
 //                    }
-//                    catch (global::System.InvalidCastException e) {
+//                    catch (global::System.InvalidCastException e)
+//                    {
 //                        throw new global::System.Data.StrongTypingException("The value for column \'CardID\' in table \'TransactionDetail\' is DBNull.", e);
 //                    }
 //                }
-//                set {
+//                set
+//                {
 //                    this[this.tableTransactionDetail.CardIDColumn] = value;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public string Quantity {
-//                get {
-//                    try {
+//            public string Quantity
+//            {
+//                get
+//                {
+//                    try
+//                    {
 //                        return ((string)(this[this.tableTransactionDetail.QuantityColumn]));
 //                    }
-//                    catch (global::System.InvalidCastException e) {
+//                    catch (global::System.InvalidCastException e)
+//                    {
 //                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'TransactionDetail\' is DBNull.", e);
 //                    }
 //                }
-//                set {
+//                set
+//                {
 //                    this[this.tableTransactionDetail.QuantityColumn] = value;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public string CardPrice {
-//                get {
-//                    try {
+//            public string CardPrice
+//            {
+//                get
+//                {
+//                    try
+//                    {
 //                        return ((string)(this[this.tableTransactionDetail.CardPriceColumn]));
 //                    }
-//                    catch (global::System.InvalidCastException e) {
+//                    catch (global::System.InvalidCastException e)
+//                    {
 //                        throw new global::System.Data.StrongTypingException("The value for column \'CardPrice\' in table \'TransactionDetail\' is DBNull.", e);
 //                    }
 //                }
-//                set {
+//                set
+//                {
 //                    this[this.tableTransactionDetail.CardPriceColumn] = value;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public string TotalPrice {
-//                get {
-//                    try {
+//            public string TotalPrice
+//            {
+//                get
+//                {
+//                    try
+//                    {
 //                        return ((string)(this[this.tableTransactionDetail.TotalPriceColumn]));
 //                    }
-//                    catch (global::System.InvalidCastException e) {
+//                    catch (global::System.InvalidCastException e)
+//                    {
 //                        throw new global::System.Data.StrongTypingException("The value for column \'TotalPrice\' in table \'TransactionDetail\' is DBNull.", e);
 //                    }
 //                }
-//                set {
+//                set
+//                {
 //                    this[this.tableTransactionDetail.TotalPriceColumn] = value;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionHeaderRow TransactionHeaderRow {
-//                get {
+//            public TransactionHeaderRow TransactionHeaderRow
+//            {
+//                get
+//                {
 //                    return ((TransactionHeaderRow)(this.GetParentRow(this.Table.ParentRelations["TransactionHeader_TransactionDetail"])));
 //                }
-//                set {
+//                set
+//                {
 //                    this.SetParentRow(value, this.Table.ParentRelations["TransactionHeader_TransactionDetail"]);
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public bool IsTransactionIDNull() {
+//            public bool IsTransactionIDNull()
+//            {
 //                return this.IsNull(this.tableTransactionDetail.TransactionIDColumn);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void SetTransactionIDNull() {
+//            public void SetTransactionIDNull()
+//            {
 //                this[this.tableTransactionDetail.TransactionIDColumn] = global::System.Convert.DBNull;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public bool IsCardIDNull() {
+//            public bool IsCardIDNull()
+//            {
 //                return this.IsNull(this.tableTransactionDetail.CardIDColumn);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void SetCardIDNull() {
+//            public void SetCardIDNull()
+//            {
 //                this[this.tableTransactionDetail.CardIDColumn] = global::System.Convert.DBNull;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public bool IsQuantityNull() {
+//            public bool IsQuantityNull()
+//            {
 //                return this.IsNull(this.tableTransactionDetail.QuantityColumn);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void SetQuantityNull() {
+//            public void SetQuantityNull()
+//            {
 //                this[this.tableTransactionDetail.QuantityColumn] = global::System.Convert.DBNull;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public bool IsCardPriceNull() {
+//            public bool IsCardPriceNull()
+//            {
 //                return this.IsNull(this.tableTransactionDetail.CardPriceColumn);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void SetCardPriceNull() {
+//            public void SetCardPriceNull()
+//            {
 //                this[this.tableTransactionDetail.CardPriceColumn] = global::System.Convert.DBNull;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public bool IsTotalPriceNull() {
+//            public bool IsTotalPriceNull()
+//            {
 //                return this.IsNull(this.tableTransactionDetail.TotalPriceColumn);
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public void SetTotalPriceNull() {
+//            public void SetTotalPriceNull()
+//            {
 //                this[this.tableTransactionDetail.TotalPriceColumn] = global::System.Convert.DBNull;
 //            }
 //        }
-        
+
 //        /// <summary>
 //        ///Row event argument class
 //        ///</summary>
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        public class TransactionHeaderRowChangeEvent : global::System.EventArgs {
-            
+//        public class TransactionHeaderRowChangeEvent : global::System.EventArgs
+//        {
+
 //            private TransactionHeaderRow eventRow;
-            
+
 //            private global::System.Data.DataRowAction eventAction;
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionHeaderRowChangeEvent(TransactionHeaderRow row, global::System.Data.DataRowAction action) {
+//            public TransactionHeaderRowChangeEvent(TransactionHeaderRow row, global::System.Data.DataRowAction action)
+//            {
 //                this.eventRow = row;
 //                this.eventAction = action;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionHeaderRow Row {
-//                get {
+//            public TransactionHeaderRow Row
+//            {
+//                get
+//                {
 //                    return this.eventRow;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataRowAction Action {
-//                get {
+//            public global::System.Data.DataRowAction Action
+//            {
+//                get
+//                {
 //                    return this.eventAction;
 //                }
 //            }
 //        }
-        
+
 //        /// <summary>
 //        ///Row event argument class
 //        ///</summary>
 //        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//        public class TransactionDetailRowChangeEvent : global::System.EventArgs {
-            
+//        public class TransactionDetailRowChangeEvent : global::System.EventArgs
+//        {
+
 //            private TransactionDetailRow eventRow;
-            
+
 //            private global::System.Data.DataRowAction eventAction;
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionDetailRowChangeEvent(TransactionDetailRow row, global::System.Data.DataRowAction action) {
+//            public TransactionDetailRowChangeEvent(TransactionDetailRow row, global::System.Data.DataRowAction action)
+//            {
 //                this.eventRow = row;
 //                this.eventAction = action;
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public TransactionDetailRow Row {
-//                get {
+//            public TransactionDetailRow Row
+//            {
+//                get
+//                {
 //                    return this.eventRow;
 //                }
 //            }
-            
+
 //            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 //            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-//            public global::System.Data.DataRowAction Action {
-//                get {
+//            public global::System.Data.DataRowAction Action
+//            {
+//                get
+//                {
 //                    return this.eventAction;
 //                }
 //            }

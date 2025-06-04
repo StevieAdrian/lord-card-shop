@@ -44,5 +44,10 @@ namespace lord_card_shop.Controller
         {
             TransactionHeaderRepository.UpdateTransaction(transactionId, "Handled");
         }
+
+        public static DataTable FetchByStatus(string status)
+        {
+            return TransactionHandler.GetStatus(status);
+        }
     }
 }

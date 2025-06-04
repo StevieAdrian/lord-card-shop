@@ -33,5 +33,43 @@ namespace lord_card_shop.Controller
 
             return "";
         }
+
+        public static bool TryUpdateUserProfile(
+             string username,
+             string email,
+             string dob,
+             string oldPassword,
+             string newPassword,
+             string confirmPassword,
+             bool isMale,
+             bool isFemale,
+             out string errorMessage
+         )
+        {
+            bool isValid = ProfileHandler.ValidateUpdateUser(
+                username,
+                email,
+                dob,
+                oldPassword,
+                newPassword,
+                confirmPassword,
+                isMale,
+                isFemale,
+                out errorMessage
+            );
+
+            if (!isValid) return false;
+
+            ProfileHandler.UpdateUser(
+                username,
+                email,
+                dob,
+                oldPassword,
+                newPassword,
+                isMale
+            );
+
+            return true;
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using lord_card_shop.Helper;
 using lord_card_shop.Handler;
 using System;
+using lord_card_shop.Controller;
 
 namespace lord_card_shop.Views.User
 {
@@ -60,7 +61,7 @@ namespace lord_card_shop.Views.User
             else
             {
                 string errorMessage;
-                bool isValid = ProfileHandler.ValidateUpdateUser(
+                bool success = AuthController.TryUpdateUserProfile(
                     UsernameBox.Text.Trim(),
                     EmailBox.Text.Trim(),
                     DOBBox.Text.Trim(),
@@ -70,9 +71,9 @@ namespace lord_card_shop.Views.User
                     rbMale.Checked,
                     rbFemale.Checked,
                     out errorMessage
-                 );
+                );
 
-                if (!isValid)
+                if (!success)
                 {
                     ErrorLbl.Text = errorMessage;
                     ErrorPanel.Visible = !string.IsNullOrEmpty(ErrorLbl.Text);
@@ -81,14 +82,7 @@ namespace lord_card_shop.Views.User
                 {
                     ErrorLbl.Text = "";
                     ErrorPanel.Visible = false;
-                    ProfileHandler.UpdateUser(
-                        UsernameBox.Text.Trim(),
-                        EmailBox.Text.Trim(),
-                        DOBBox.Text.Trim(),
-                        OldPassBox.Text,
-                        NewPassBox.Text,
-                        rbMale.Checked
-                    );
+
                     SetProfileFieldsEditable(false);
                     OldPassBox.Attributes["value"] = SessionHelper.GetCurrentUser().UserPassword;
                     ProfileBtn.Text = "Edit";

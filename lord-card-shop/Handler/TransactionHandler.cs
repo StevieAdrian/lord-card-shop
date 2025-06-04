@@ -3,6 +3,7 @@ using lord_card_shop.Model;
 using lord_card_shop.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Web;
@@ -32,6 +33,11 @@ namespace lord_card_shop.Handler
             return "success";
         }
 
+
+        public static DataTable GetStatus(string status)
+        {
+            return TransactionHeaderRepository.GetByStatus(status);
+        }
 
     }
 }
